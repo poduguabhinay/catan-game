@@ -1,0 +1,26 @@
+{
+  "name": "catan-game",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@12.6.0",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "corepack pnpm --filter catan-server --filter catan-client --parallel dev",
+    "build": "corepack pnpm --filter catan-client build",
+    "start": "corepack pnpm --filter catan-server start",
+    "test": "corepack pnpm -r test",
+    "lint": "eslint .",
+    "typecheck": "corepack pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "eslint": "catalog:",
+    "@eslint/js": "catalog:",
+    "typescript-eslint": "catalog:",
+    "eslint-plugin-react-hooks": "catalog:",
+    "globals": "catalog:",
+    "typescript": "catalog:"
+  }
+}

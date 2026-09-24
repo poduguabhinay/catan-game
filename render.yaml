@@ -1,0 +1,15 @@
+# Render Blueprint: one free Node web service serving the built client and the
+# Socket.IO game server on a single URL. Render → New → Blueprint → pick repo.
+services:
+  - type: web
+    name: catan
+    runtime: node
+    plan: free
+    buildCommand: corepack pnpm install --frozen-lockfile && corepack pnpm build
+    startCommand: corepack pnpm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: COREPACK_ENABLE_DOWNLOAD_PROMPT
+        value: "0"
