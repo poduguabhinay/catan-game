@@ -1,0 +1,271 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1050" width="1600" height="1050" style="background:#03111e; font-family:'Rubik', system-ui, sans-serif;">
+  <defs>
+    <filter id="shadow-lg"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.6"/></filter>
+    <filter id="shadow-md"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.45"/></filter>
+    <filter id="glow-cyan"><feGaussianBlur stdDeviation="6" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
+
+    <linearGradient id="grad-viewport" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#07233d"/>
+      <stop offset="100%" stop-color="#020f1c"/>
+    </linearGradient>
+    <linearGradient id="grad-bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e3f6e"/>
+      <stop offset="100%" stop-color="#08294a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Title -->
+  <g id="Header" transform="translate(80, 50)">
+    <text font-family="'Bricolage Grotesque', sans-serif" font-size="30" font-weight="bold" fill="#ffffff">CANVAS &amp; VIEWPORT-LOCKED HUD ARCHITECTURE</text>
+    <text font-size="14" fill="#8cb3d9" y="24">100% Viewport-Locked (No Page Scroll) • Infinite Draggable / Zoomable Board Canvas • Fixed Floating Cockpit HUD</text>
+  </g>
+
+  <!-- 1440x900 Simulated Desktop Screen Frame -->
+  <g id="Simulated-Viewport-Frame" transform="translate(80, 100)" filter="url(#shadow-lg)">
+    <!-- Browser Window Bevel & Titlebar -->
+    <rect x="0" y="0" width="1440" height="900" rx="14" fill="url(#grad-viewport)" stroke="#1e4e7a" stroke-width="2"/>
+    <rect x="0" y="0" width="1440" height="34" rx="14" fill="#08233d"/>
+    <circle cx="20" cy="17" r="5.5" fill="#ef4444"/>
+    <circle cx="38" cy="17" r="5.5" fill="#f59e0b"/>
+    <circle cx="56" cy="17" r="5.5" fill="#10b981"/>
+    <text x="720" y="22" font-size="12" fill="#7fa6c9" text-anchor="middle">catan.game — 1440 × 900 Viewport-Locked Window (Zero Scrollbar)</text>
+
+    <!-- LAYER 0: PAN & ZOOM CANVAS BOUNDARY -->
+    <g id="Layer-0-Pan-Zoom-Canvas">
+      <!-- Ocean background grid with drag hint -->
+      <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+        <circle cx="30" cy="30" r="1.5" fill="rgba(255,255,255,0.06)"/>
+      </pattern>
+      <rect x="0" y="34" width="1440" height="866" fill="url(#grid)"/>
+
+      <!-- Canvas Boundary Guide Lines (Illustrating Draggable Area) -->
+      <rect x="180" y="100" width="1080" height="680" rx="16" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="8,6" opacity="0.6"/>
+      <rect x="190" y="110" width="220" height="26" rx="4" fill="rgba(14,165,233,0.15)"/>
+      <text x="200" y="128" font-size="12" font-weight="bold" fill="#38bdf8">⛶ PAN &amp; ZOOM CANVAS (z-index: 0)</text>
+
+      <!-- Center Representative 3D Hex Board Cluster -->
+      <g transform="translate(720, 440) scale(0.9)" opacity="0.9">
+        <!-- Center hex -->
+        <polygon points="0,-70 60,-35 60,35 0,70 -60,35 -60,-35" fill="#fed648" stroke="#735404" stroke-width="3"/>
+        <text x="0" y="6" font-size="13" font-weight="bold" fill="#735404" text-anchor="middle">3D BOARD</text>
+        <!-- Surrounding hexes -->
+        <polygon points="105,-70 165,-35 165,35 105,70 45,35 45,-35" fill="#347a3e" stroke="#0e2a14" stroke-width="2.5"/>
+        <polygon points="-105,-70 -45,-35 -45,35 -105,70 -165,35 -165,-35" fill="#cf6832" stroke="#542008" stroke-width="2.5"/>
+        <polygon points="52.5,22 112.5,57 112.5,127 52.5,162 -7.5,127 -7.5,57" fill="#9bd448" stroke="#325410" stroke-width="2.5"/>
+        <polygon points="-52.5,22 7.5,57 7.5,127 -52.5,162 -112.5,127 -112.5,57" fill="#9daab6" stroke="#2d353c" stroke-width="2.5"/>
+        <polygon points="52.5,-162 112.5,-127 112.5,-57 52.5,-22 -7.5,-57 -7.5,-127" fill="#ebd8a2" stroke="#69562d" stroke-width="2.5"/>
+        <polygon points="-52.5,-162 7.5,-127 7.5,-57 -52.5,-22 -112.5,-57 -112.5,-127" fill="#347a3e" stroke="#0e2a14" stroke-width="2.5"/>
+      </g>
+
+      <!-- Drag & Pan Gesture Indicator (Watermark) -->
+      <g transform="translate(720, 580)">
+        <rect x="-140" y="-18" width="280" height="36" rx="18" fill="rgba(3,17,30,0.8)" stroke="rgba(255,255,255,0.15)"/>
+        <text x="0" y="5" font-size="13" fill="#94a3b8" text-anchor="middle">🖱 Click &amp; drag anywhere to Pan • Wheel to Zoom</text>
+      </g>
+    </g>
+
+    <!-- LAYER 1: FIXED TOP COCKPIT BAR (z-index: 20) -->
+    <g id="Layer-1-Fixed-Top-Bar" transform="translate(24, 48)" filter="url(#shadow-md)">
+      <rect x="0" y="0" width="1392" height="68" rx="12" fill="url(#grad-bar)" stroke="#1e5285" stroke-width="1.5"/>
+
+      <!-- Turn Indicator -->
+      <g transform="translate(24, 18)">
+        <circle cx="16" cy="16" r="12" fill="#33b5ff" stroke="#fff" stroke-width="2"/>
+        <text x="38" y="16" font-family="'Bricolage Grotesque', sans-serif" font-size="18" font-weight="bold" fill="#fff">Your Turn</text>
+        <text x="38" y="32" font-size="12" fill="#7fa6c9">Phase: Action &amp; Trade • Roll: 8</text>
+      </g>
+
+      <!-- Center 3D Dice Display -->
+      <g transform="translate(620, 10)">
+        <rect x="0" y="0" width="48" height="48" rx="8" fill="#fff" stroke="#d5d5d5" stroke-width="2" filter="url(#shadow-sm)"/>
+        <circle cx="14" cy="14" r="3.5" fill="#222"/><circle cx="24" cy="24" r="3.5" fill="#222"/><circle cx="34" cy="34" r="3.5" fill="#222"/>
+
+        <rect x="58" y="0" width="48" height="48" rx="8" fill="#fff" stroke="#d5d5d5" stroke-width="2" filter="url(#shadow-sm)"/>
+        <circle cx="72" cy="14" r="3.5" fill="#dc2626"/><circle cx="92" cy="14" r="3.5" fill="#dc2626"/><circle cx="82" cy="24" r="3.5" fill="#dc2626"/>
+        <circle cx="72" cy="34" r="3.5" fill="#dc2626"/><circle cx="92" cy="34" r="3.5" fill="#dc2626"/>
+        
+        <text x="122" y="32" font-family="'Bricolage Grotesque', sans-serif" font-size="22" font-weight="bold" fill="#ffd54f">= 8</text>
+      </g>
+
+      <!-- Turn Timer Countdown Ring -->
+      <g transform="translate(860, 14)">
+        <rect x="0" y="0" width="120" height="40" rx="8" fill="#041527" stroke="#f06800" stroke-width="1.5"/>
+        <text x="60" y="18" font-size="10" font-weight="bold" fill="#ffaa66" text-anchor="middle">TURN TIMER</text>
+        <text x="60" y="33" font-family="monospace" font-size="15" font-weight="bold" fill="#fff" text-anchor="middle">01:42</text>
+      </g>
+
+      <!-- Main Action Buttons -->
+      <g transform="translate(1010, 14)">
+        <rect x="0" y="0" width="110" height="40" rx="8" fill="#f06800" filter="url(#shadow-sm)"/>
+        <text x="55" y="25" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">🔁 TRADE</text>
+
+        <rect x="120" y="0" width="120" height="40" rx="8" fill="#1fab1c" filter="url(#shadow-sm)"/>
+        <text x="180" y="25" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">END TURN ➜</text>
+
+        <!-- Sound / Settings -->
+        <rect x="250" y="0" width="40" height="40" rx="8" fill="#092542" stroke="#1d4d7a"/>
+        <text x="270" y="26" font-size="18" fill="#a4c2db" text-anchor="middle">⚙</text>
+
+        <rect x="298" y="0" width="40" height="40" rx="8" fill="#092542" stroke="#1d4d7a"/>
+        <text x="318" y="26" font-size="18" fill="#a4c2db" text-anchor="middle">🔊</text>
+      </g>
+    </g>
+
+    <!-- LAYER 2: FIXED SIDE DOCKS (z-index: 20) -->
+    <!-- Right Player Leaderboard Dock -->
+    <g id="Layer-2-Player-Dock" transform="translate(1100, 130)" filter="url(#shadow-md)">
+      <rect x="0" y="0" width="316" height="340" rx="12" fill="url(#grad-bar)" stroke="#1e5285" stroke-width="1.5"/>
+      <text x="20" y="26" font-family="'Bricolage Grotesque', sans-serif" font-size="16" font-weight="bold" fill="#ffd54f">PLAYERS LEADERBOARD</text>
+
+      <!-- Player 1: You (Active, 1st place) -->
+      <g transform="translate(14, 40)">
+        <rect x="0" y="0" width="288" height="58" rx="8" fill="#051f38" stroke="#33b5ff" stroke-width="2"/>
+        <circle cx="24" cy="29" r="14" fill="#33b5ff" stroke="#fff" stroke-width="1.5"/>
+        <text x="46" y="26" font-size="14" font-weight="bold" fill="#fff">Bob (You)</text>
+        <text x="46" y="44" font-size="11" fill="#7fa6c9">🃏 7 Cards • 🛣 11 Roads</text>
+        <text x="240" y="34" font-family="'Bricolage Grotesque', sans-serif" font-size="20" font-weight="bold" fill="#ffd54f">8 VP</text>
+      </g>
+
+      <!-- Player 2: Alice -->
+      <g transform="translate(14, 106)">
+        <rect x="0" y="0" width="288" height="54" rx="8" fill="#061c33" opacity="0.9"/>
+        <circle cx="24" cy="27" r="13" fill="#ff4d4d"/>
+        <text x="46" y="24" font-size="13" font-weight="bold" fill="#fff">Alice</text>
+        <text x="46" y="40" font-size="11" fill="#7fa6c9">🃏 5 Cards • 🏆 Longest Road</text>
+        <text x="245" y="33" font-size="17" font-weight="bold" fill="#cbd5e1">6 VP</text>
+      </g>
+
+      <!-- Player 3: Carol -->
+      <g transform="translate(14, 168)">
+        <rect x="0" y="0" width="288" height="54" rx="8" fill="#061c33" opacity="0.9"/>
+        <circle cx="24" cy="27" r="13" fill="#ffaa44"/>
+        <text x="46" y="24" font-size="13" font-weight="bold" fill="#fff">Carol</text>
+        <text x="46" y="40" font-size="11" fill="#7fa6c9">🃏 3 Cards • ⚔ Largest Army</text>
+        <text x="245" y="33" font-size="17" font-weight="bold" fill="#cbd5e1">5 VP</text>
+      </g>
+
+      <!-- Player 4: Dave -->
+      <g transform="translate(14, 230)">
+        <rect x="0" y="0" width="288" height="54" rx="8" fill="#061c33" opacity="0.9"/>
+        <circle cx="24" cy="27" r="13" fill="#44e565"/>
+        <text x="46" y="24" font-size="13" font-weight="bold" fill="#fff">Dave</text>
+        <text x="46" y="40" font-size="11" fill="#7fa6c9">🃏 4 Cards</text>
+        <text x="245" y="33" font-size="17" font-weight="bold" fill="#cbd5e1">4 VP</text>
+      </g>
+    </g>
+
+    <!-- Collapsible Live Game Event Log -->
+    <g id="Layer-2-Event-Log" transform="translate(1100, 486)" filter="url(#shadow-md)">
+      <rect x="0" y="0" width="316" height="240" rx="12" fill="url(#grad-bar)" stroke="#1e5285" stroke-width="1.5"/>
+      <text x="20" y="24" font-size="13" font-weight="bold" fill="#ffd54f">GAME EVENT LOG</text>
+
+      <g transform="translate(14, 38)" font-size="11" fill="#cbd5e1">
+        <text x="0" y="14" fill="#60a5fa">● Bob rolled 3 + 5 = 8</text>
+        <text x="0" y="32" fill="#86efac">↳ Bob received 2 Wheat, 1 Ore</text>
+        <text x="0" y="50" fill="#f87171">↳ Alice received 1 Wood</text>
+        <text x="0" y="68" fill="#fdba74">↳ Carol received 1 Brick</text>
+        <text x="0" y="86" fill="#cbd5e1">● Alice traded 1 Wood ➜ 1 Sheep with Bob</text>
+        <text x="0" y="104" fill="#fbbf24">● Bob built a Settlement at Vertex #14</text>
+        <text x="0" y="122" fill="#f472b6">● Carol played a Knight Card</text>
+        <text x="0" y="140" fill="#94a3b8">↳ Robber moved to Hills #3</text>
+      </g>
+    </g>
+
+    <!-- FLOATING CANVAS ZOOM & PAN CONTROLS (Bottom-Right Widget) -->
+    <g id="Layer-3-Floating-Zoom-Widget" transform="translate(1100, 742)" filter="url(#shadow-lg)">
+      <rect x="0" y="0" width="316" height="48" rx="10" fill="#04182a" stroke="#38bdf8" stroke-width="1.5"/>
+      
+      <g transform="translate(15, 8)">
+        <rect x="0" y="0" width="32" height="32" rx="6" fill="#0f3d69"/>
+        <text x="16" y="22" font-size="20" font-weight="bold" fill="#fff" text-anchor="middle">+</text>
+      </g>
+      <text x="95" y="30" font-size="14" font-weight="bold" fill="#38bdf8" text-anchor="middle">100% Zoom</text>
+      <g transform="translate(145, 8)">
+        <rect x="0" y="0" width="32" height="32" rx="6" fill="#0f3d69"/>
+        <text x="16" y="21" font-size="20" font-weight="bold" fill="#fff" text-anchor="middle">−</text>
+      </g>
+      <g transform="translate(190, 8)">
+        <rect x="0" y="0" width="110" height="32" rx="6" fill="#0f3d69"/>
+        <text x="55" y="21" font-size="12" font-weight="bold" fill="#ffd54f" text-anchor="middle">⛶ Fit to Screen</text>
+      </g>
+    </g>
+
+    <!-- LAYER 4: FIXED BOTTOM COCKPIT DOCK (Build Bar + Hand Drawer) (z-index: 20) -->
+    <g id="Layer-4-Bottom-Dock" transform="translate(140, 770)" filter="url(#shadow-lg)">
+      <!-- Main Dock Container -->
+      <rect x="0" y="0" width="940" height="115" rx="16" fill="url(#grad-bar)" stroke="#1e5285" stroke-width="2"/>
+
+      <!-- Resource Hand Cards Tray -->
+      <g transform="translate(24, 12)">
+        <text x="0" y="14" font-size="12" font-weight="bold" fill="#ffd54f">YOUR HAND (8 CARDS)</text>
+        
+        <!-- Wood (2) -->
+        <g transform="translate(0, 22)">
+          <rect x="0" y="0" width="60" height="65" rx="6" fill="#fffbf0" stroke="#bfa97e" stroke-width="1.5" filter="url(#shadow-sm)"/>
+          <text x="30" y="28" font-size="22" text-anchor="middle">🪵</text>
+          <text x="30" y="52" font-size="16" font-weight="bold" fill="#1b4d24" text-anchor="middle">2</text>
+        </g>
+        <!-- Brick (1) -->
+        <g transform="translate(68, 22)">
+          <rect x="0" y="0" width="60" height="65" rx="6" fill="#fffbf0" stroke="#bfa97e" stroke-width="1.5" filter="url(#shadow-sm)"/>
+          <text x="30" y="28" font-size="22" text-anchor="middle">🧱</text>
+          <text x="30" y="52" font-size="16" font-weight="bold" fill="#8f3e15" text-anchor="middle">1</text>
+        </g>
+        <!-- Sheep (2) -->
+        <g transform="translate(136, 22)">
+          <rect x="0" y="0" width="60" height="65" rx="6" fill="#fffbf0" stroke="#bfa97e" stroke-width="1.5" filter="url(#shadow-sm)"/>
+          <text x="30" y="28" font-size="22" text-anchor="middle">🐑</text>
+          <text x="30" y="52" font-size="16" font-weight="bold" fill="#5c9420" text-anchor="middle">2</text>
+        </g>
+        <!-- Wheat (2) -->
+        <g transform="translate(204, 22)">
+          <rect x="0" y="0" width="60" height="65" rx="6" fill="#fffbf0" stroke="#bfa97e" stroke-width="1.5" filter="url(#shadow-sm)"/>
+          <text x="30" y="28" font-size="22" text-anchor="middle">🌾</text>
+          <text x="30" y="52" font-size="16" font-weight="bold" fill="#b08307" text-anchor="middle">2</text>
+        </g>
+        <!-- Ore (1) -->
+        <g transform="translate(272, 22)">
+          <rect x="0" y="0" width="60" height="65" rx="6" fill="#fffbf0" stroke="#bfa97e" stroke-width="1.5" filter="url(#shadow-sm)"/>
+          <text x="30" y="28" font-size="22" text-anchor="middle">⛰</text>
+          <text x="30" y="52" font-size="16" font-weight="bold" fill="#5a6773" text-anchor="middle">1</text>
+        </g>
+      </g>
+
+      <!-- Vertical Divider -->
+      <line x1="375" y1="18" x2="375" y2="100" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+
+      <!-- Build Buttons Cockpit -->
+      <g transform="translate(395, 16)">
+        <text x="0" y="10" font-size="12" font-weight="bold" fill="#ffd54f">BUILD ACTIONS (CLICK TO ARM PLACEMENT)</text>
+
+        <!-- Road Button -->
+        <g transform="translate(0, 18)">
+          <rect x="0" y="0" width="120" height="64" rx="8" fill="#08294a" stroke="#3b82f6" stroke-width="1.5"/>
+          <text x="60" y="26" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">🛣 Road</text>
+          <text x="60" y="48" font-size="12" fill="#ffd54f" text-anchor="middle">🪵1 🧱1</text>
+        </g>
+
+        <!-- Settlement Button (Armed Active Pulse) -->
+        <g transform="translate(130, 18)" filter="url(#glow-cyan)">
+          <rect x="0" y="0" width="130" height="64" rx="8" fill="#f06800" stroke="#ffaa44" stroke-width="2"/>
+          <text x="65" y="26" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">🏠 Settlement</text>
+          <text x="65" y="48" font-size="11" fill="#ffe0b2" text-anchor="middle">🪵1 🧱1 🐑1 🌾1</text>
+        </g>
+
+        <!-- City Button -->
+        <g transform="translate(270, 18)">
+          <rect x="0" y="0" width="120" height="64" rx="8" fill="#08294a" stroke="#3b82f6" stroke-width="1.5"/>
+          <text x="60" y="26" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">🏛 City</text>
+          <text x="60" y="48" font-size="12" fill="#ffd54f" text-anchor="middle">🌾2 ⛰3</text>
+        </g>
+
+        <!-- Buy Dev Card -->
+        <g transform="translate(400, 18)">
+          <rect x="0" y="0" width="125" height="64" rx="8" fill="#08294a" stroke="#3b82f6" stroke-width="1.5"/>
+          <text x="62" y="26" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">🃏 Dev Card</text>
+          <text x="62" y="48" font-size="12" fill="#ffd54f" text-anchor="middle">🐑1 🌾1 ⛰1</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

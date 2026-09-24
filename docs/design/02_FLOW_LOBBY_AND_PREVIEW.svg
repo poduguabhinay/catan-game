@@ -1,0 +1,219 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" style="background:#03111e; font-family:'Rubik', system-ui, sans-serif;">
+  <defs>
+    <filter id="shadow-lg"><feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000" flood-opacity="0.6"/></filter>
+    <filter id="shadow-md"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.45"/></filter>
+    <filter id="glow-gold"><feGaussianBlur stdDeviation="8" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
+
+    <linearGradient id="sea-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#06223b"/><stop offset="100%" stop-color="#020e1a"/></linearGradient>
+    <linearGradient id="panel-card" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0d3b66"/><stop offset="100%" stop-color="#072644"/></linearGradient>
+    <linearGradient id="card-inner" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#061c33"/><stop offset="100%" stop-color="#041221"/></linearGradient>
+  </defs>
+
+  <!-- Background Sea Canvas -->
+  <rect width="1440" height="900" fill="url(#sea-bg)"/>
+
+  <!-- Top Global Header -->
+  <g id="Top-Nav" transform="translate(60, 35)">
+    <text font-family="'Bricolage Grotesque', sans-serif" font-size="32" font-weight="bold" fill="#ffffff" letter-spacing="1">CATAN</text>
+    <text font-size="14" fill="#60a5fa" x="110" y="-8">MULTIPLAYER LOBBY</text>
+    <g transform="translate(1180, -10)">
+      <rect width="140" height="38" rx="8" fill="#0d3b66" stroke="#1e5285"/>
+      <text x="70" y="24" font-size="13" fill="#cbd5e1" text-anchor="middle">⚙ Sound &amp; Audio</text>
+    </g>
+  </g>
+
+  <!-- Main Container: Two-Column Split -->
+  <!-- LEFT COLUMN: Room Details & Player Roster (Width: 540px) -->
+  <g id="Left-Roster-Column" transform="translate(60, 95)">
+    <!-- Room Header Card -->
+    <g filter="url(#shadow-md)">
+      <rect width="540" height="85" rx="14" fill="url(#panel-card)" stroke="#1d64a6" stroke-width="1.5"/>
+      <g transform="translate(24, 20)">
+        <text font-size="12" font-weight="bold" fill="#93c5fd">ROOM CODE (SHARE WITH FRIENDS)</text>
+        <text y="36" font-family="'Bricolage Grotesque', sans-serif" font-size="36" font-weight="bold" fill="#ffffff" letter-spacing="4">4SSN</text>
+      </g>
+      <g transform="translate(360, 24)">
+        <rect width="155" height="42" rx="8" fill="#f06800" filter="url(#shadow-md)"/>
+        <text x="77" y="26" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">📋 Copy Invite Link</text>
+      </g>
+    </g>
+
+    <!-- Player Seats List (6 Player Slots Max) -->
+    <g id="Player-Slots" transform="translate(0, 105)" filter="url(#shadow-md)">
+      <rect width="540" height="430" rx="14" fill="url(#panel-card)" stroke="#1d64a6" stroke-width="1.5"/>
+      <text x="24" y="28" font-family="'Bricolage Grotesque', sans-serif" font-size="16" font-weight="bold" fill="#ffd54f">SEATS (4 / 4 FILLED)</text>
+
+      <!-- Seat 0: Alice (Host - Red) -->
+      <g transform="translate(18, 42)">
+        <rect width="504" height="60" rx="8" fill="#061c33" stroke="#ff4d4d" stroke-width="1.5"/>
+        <circle cx="28" cy="30" r="14" fill="#ff4d4d" stroke="#fff" stroke-width="2"/>
+        <text x="52" y="28" font-size="15" font-weight="bold" fill="#fff">Alice 👑</text>
+        <text x="52" y="46" font-size="11" fill="#86efac">Host • Ready ✓</text>
+        <!-- Selected Color Pill -->
+        <rect x="360" y="16" width="65" height="28" rx="6" fill="#7f1d1d"/>
+        <text x="392" y="34" font-size="12" font-weight="bold" fill="#fca5a5" text-anchor="middle">RED</text>
+        <!-- Ready Badge -->
+        <rect x="435" y="16" width="55" height="28" rx="6" fill="#15803d"/>
+        <text x="462" y="34" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">READY</text>
+      </g>
+
+      <!-- Seat 1: Bob (You - Blue) -->
+      <g transform="translate(18, 110)">
+        <rect width="504" height="60" rx="8" fill="#042340" stroke="#38bdf8" stroke-width="2" filter="url(#glow-gold)"/>
+        <circle cx="28" cy="30" r="14" fill="#0284c7" stroke="#fff" stroke-width="2"/>
+        <text x="52" y="28" font-size="15" font-weight="bold" fill="#fff">Bob (You)</text>
+        <text x="52" y="46" font-size="11" fill="#86efac">Seat #2 • Ready ✓</text>
+        <!-- Color Selector Options -->
+        <g transform="translate(320, 16)">
+          <circle cx="14" cy="14" r="12" fill="#0284c7" stroke="#fff" stroke-width="2.5"/> <!-- Active Blue -->
+          <circle cx="44" cy="14" r="10" fill="#f97316" opacity="0.4"/>
+          <circle cx="70" cy="14" r="10" fill="#22c55e" opacity="0.4"/>
+          <circle cx="96" cy="14" r="10" fill="#a855f7" opacity="0.4"/>
+        </g>
+        <rect x="435" y="16" width="55" height="28" rx="6" fill="#15803d"/>
+        <text x="462" y="34" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">READY</text>
+      </g>
+
+      <!-- Seat 2: Carol (Orange) -->
+      <g transform="translate(18, 178)">
+        <rect width="504" height="60" rx="8" fill="#061c33"/>
+        <circle cx="28" cy="30" r="14" fill="#ea580c" stroke="#fff" stroke-width="1.5"/>
+        <text x="52" y="28" font-size="15" font-weight="bold" fill="#fff">Carol</text>
+        <text x="52" y="46" font-size="11" fill="#86efac">Seat #3 • Ready ✓</text>
+        <rect x="360" y="16" width="65" height="28" rx="6" fill="#7c2d12"/>
+        <text x="392" y="34" font-size="12" font-weight="bold" fill="#fdba74" text-anchor="middle">ORANGE</text>
+        <rect x="435" y="16" width="55" height="28" rx="6" fill="#15803d"/>
+        <text x="462" y="34" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">READY</text>
+      </g>
+
+      <!-- Seat 3: Dave (White) -->
+      <g transform="translate(18, 246)">
+        <rect width="504" height="60" rx="8" fill="#061c33"/>
+        <circle cx="28" cy="30" r="14" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+        <text x="52" y="28" font-size="15" font-weight="bold" fill="#fff">Dave</text>
+        <text x="52" y="46" font-size="11" fill="#86efac">Seat #4 • Ready ✓</text>
+        <rect x="360" y="16" width="65" height="28" rx="6" fill="#334155"/>
+        <text x="392" y="34" font-size="12" font-weight="bold" fill="#f1f5f9" text-anchor="middle">WHITE</text>
+        <rect x="435" y="16" width="55" height="28" rx="6" fill="#15803d"/>
+        <text x="462" y="34" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">READY</text>
+      </g>
+
+      <!-- Empty / Add Bot Row -->
+      <g transform="translate(18, 314)">
+        <rect width="504" height="50" rx="8" fill="rgba(6,28,51,0.5)" stroke="#1d4d7a" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="252" y="30" font-size="13" fill="#64748b" text-anchor="middle">+ Invite friend with code '4SSN' or expand to 5-6 players</text>
+      </g>
+    </g>
+
+    <!-- Host Rules Drawer & Settings (Bottom Left) -->
+    <g id="Host-Settings-Drawer" transform="translate(0, 550)" filter="url(#shadow-md)">
+      <rect width="540" height="185" rx="14" fill="url(#panel-card)" stroke="#1d64a6" stroke-width="1.5"/>
+      <text x="24" y="28" font-family="'Bricolage Grotesque', sans-serif" font-size="16" font-weight="bold" fill="#ffd54f">MATCH RULES &amp; CONFIGURATION</text>
+
+      <g transform="translate(24, 46)">
+        <!-- Turn Timer -->
+        <g transform="translate(0, 0)">
+          <text font-size="12" fill="#93c5fd">Turn Timer</text>
+          <rect y="8" width="150" height="38" rx="6" fill="#061c33" stroke="#1d4d7a"/>
+          <text x="20" y="32" font-size="13" font-weight="bold" fill="#fff">⏱ 120s (Normal)</text>
+        </g>
+        <!-- Dice Mode -->
+        <g transform="translate(170, 0)">
+          <text font-size="12" fill="#93c5fd">Dice Algorithm</text>
+          <rect y="8" width="150" height="38" rx="6" fill="#061c33" stroke="#1d4d7a"/>
+          <text x="20" y="32" font-size="13" font-weight="bold" fill="#fff">🎲 Balanced (Deck)</text>
+        </g>
+        <!-- Max Players -->
+        <g transform="translate(340, 0)">
+          <text font-size="12" fill="#93c5fd">Max Players</text>
+          <rect y="8" width="150" height="38" rx="6" fill="#061c33" stroke="#1d4d7a"/>
+          <text x="20" y="32" font-size="13" font-weight="bold" fill="#fff">👥 4 Players</text>
+        </g>
+
+        <!-- Secondary Row -->
+        <g transform="translate(0, 65)">
+          <text font-size="12" fill="#93c5fd">Victory Goal</text>
+          <rect y="8" width="150" height="38" rx="6" fill="#061c33" stroke="#1d4d7a"/>
+          <text x="20" y="32" font-size="13" font-weight="bold" fill="#fff">🏆 10 Victory Points</text>
+        </g>
+        <g transform="translate(170, 65)">
+          <text font-size="12" fill="#93c5fd">5-6P Special Build</text>
+          <rect y="8" width="150" height="38" rx="6" fill="#061c33" stroke="#1d4d7a"/>
+          <text x="20" y="32" font-size="13" font-weight="bold" fill="#94a3b8">Classic (Clockwise)</text>
+        </g>
+        <g transform="translate(340, 65)">
+          <text font-size="12" fill="#93c5fd">Friendly Robber</text>
+          <rect y="8" width="150" height="38" rx="6" fill="#061c33" stroke="#1d4d7a"/>
+          <text x="20" y="32" font-size="13" font-weight="bold" fill="#fff">Off (Standard)</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT COLUMN: Live 3D Board Generator Preview (Width: 740px) -->
+  <g id="Right-Board-Preview-Column" transform="translate(640, 95)" filter="url(#shadow-lg)">
+    <rect width="740" height="640" rx="16" fill="url(#panel-card)" stroke="#1d64a6" stroke-width="2"/>
+    
+    <!-- Preview Titlebar -->
+    <g transform="translate(28, 28)">
+      <text font-family="'Bricolage Grotesque', sans-serif" font-size="18" font-weight="bold" fill="#ffffff">LIVE BOARD GENERATOR PREVIEW</text>
+      <text y="20" font-size="12" fill="#7fa6c9">Seeded layout: '4SSN-ALPHA-92' • 19 Tiles • 18 Number Tokens • 9 Harbors</text>
+    </g>
+
+    <!-- Regenerate Seed CTA (Top Right) -->
+    <g transform="translate(560, 20)">
+      <rect width="155" height="42" rx="8" fill="#1e90ff" filter="url(#shadow-md)"/>
+      <text x="77" y="26" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">🎲 Regenerate Board</text>
+    </g>
+
+    <!-- 3D Board Cluster Representation -->
+    <g transform="translate(370, 360) scale(1.15)">
+      <!-- Ocean Platter Ring -->
+      <polygon points="0,-180 155.8,-90 155.8,90 0,180 -155.8,90 -155.8,-90" fill="#041d33" stroke="#0f4577" stroke-width="3"/>
+      
+      <!-- Hexes with Numbers & Biomes -->
+      <!-- Center: Desert -->
+      <polygon points="0,-45 39,-22.5 39,22.5 0,45 -39,22.5 -39,-22.5" fill="#d4bb79" stroke="#574624" stroke-width="1.5"/>
+      <!-- Ring 1 (6 hexes) -->
+      <polygon points="0,-90 39,-67.5 39,-22.5 0,0 -39,-22.5 -39,-67.5" fill="#347a3e" stroke="#112914" stroke-width="1.5"/>
+      <circle cx="0" cy="-45" r="14" fill="#fff" stroke="#999"/><text x="0" y="-40" font-size="11" font-weight="bold" fill="#222" text-anchor="middle">5</text>
+
+      <polygon points="78,-45 117,-22.5 117,22.5 78,45 39,22.5 39,-22.5" fill="#f5c938" stroke="#664d00" stroke-width="1.5"/>
+      <circle cx="78" cy="0" r="14" fill="#fff" stroke="#999"/><text x="78" y="5" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">6</text>
+
+      <polygon points="78,45 117,67.5 117,112.5 78,135 39,112.5 39,67.5" fill="#ba5d2c" stroke="#4a1f0a" stroke-width="1.5"/>
+      <circle cx="78" cy="90" r="14" fill="#fff" stroke="#999"/><text x="78" y="95" font-size="11" font-weight="bold" fill="#222" text-anchor="middle">9</text>
+
+      <polygon points="0,90 39,112.5 39,157.5 0,180 -39,157.5 -39,112.5" fill="#88c442" stroke="#304f14" stroke-width="1.5"/>
+      <circle cx="0" cy="135" r="14" fill="#fff" stroke="#999"/><text x="0" y="140" font-size="11" font-weight="bold" fill="#222" text-anchor="middle">10</text>
+
+      <polygon points="-78,45 -39,67.5 -39,112.5 -78,135 -117,112.5 -117,67.5" fill="#8f9ca8" stroke="#2b343d" stroke-width="1.5"/>
+      <circle cx="-78" cy="90" r="14" fill="#fff" stroke="#999"/><text x="-78" y="95" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">8</text>
+
+      <polygon points="-78,-45 -39,-22.5 -39,22.5 -78,45 -117,22.5 -117,-22.5" fill="#347a3e" stroke="#112914" stroke-width="1.5"/>
+      <circle cx="-78" cy="0" r="14" fill="#fff" stroke="#999"/><text x="-78" y="5" font-size="11" font-weight="bold" fill="#222" text-anchor="middle">4</text>
+    </g>
+
+    <!-- Bottom Harbor Badges Legend -->
+    <g transform="translate(28, 590)">
+      <text font-size="12" fill="#7fa6c9">Harbors: ⚓ 3:1 Any (4) • 🪵 Wood 2:1 • 🧱 Brick 2:1 • 🐑 Sheep 2:1 • 🌾 Wheat 2:1 • ⛰ Ore 2:1</text>
+    </g>
+  </g>
+
+  <!-- BOTTOM FULL-WIDTH PRIMARY ACTION BAR -->
+  <g id="Bottom-Primary-Action-Bar" transform="translate(60, 755)">
+    <!-- Ready / Start Banner -->
+    <rect width="1320" height="95" rx="14" fill="#08233d" stroke="#1e5285" stroke-width="1.5" filter="url(#shadow-lg)"/>
+    
+    <g transform="translate(32, 28)">
+      <text font-family="'Bricolage Grotesque', sans-serif" font-size="20" font-weight="bold" fill="#ffffff">All 4 players are ready with selected colors!</text>
+      <text y="22" font-size="13" fill="#86efac">The match is primed to start. Alice (Host) holds the launch trigger.</text>
+    </g>
+
+    <!-- START MATCH BIG GLOWING BUTTON -->
+    <g transform="translate(1020, 20)" filter="url(#glow-gold)">
+      <rect width="265" height="55" rx="12" fill="#f06800" stroke="#ffaa44" stroke-width="2.5"/>
+      <text x="132" y="34" font-family="'Bricolage Grotesque', sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">START GAME ➜</text>
+    </g>
+  </g>
+</svg>

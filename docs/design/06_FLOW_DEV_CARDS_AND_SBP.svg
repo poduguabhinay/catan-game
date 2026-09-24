@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" style="background:#03111e; font-family:'Rubik', system-ui, sans-serif;">
+  <defs>
+    <filter id="modal-shadow"><feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000" flood-opacity="0.8"/></filter>
+    <filter id="shadow-md"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/></filter>
+    <filter id="glow-gold"><feGaussianBlur stdDeviation="8" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
+
+    <linearGradient id="modal-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f3d69"/><stop offset="100%" stop-color="#072644"/></linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="#041a2e"/>
+
+  <g transform="translate(60, 40)">
+    <text font-family="'Bricolage Grotesque', sans-serif" font-size="28" font-weight="bold" fill="#ffffff">FLOW 8 &amp; 9: DEVELOPMENT CARDS &amp; SPECIAL BUILD PHASE</text>
+    <text font-size="14" fill="#60a5fa" y="24">Interactive Hand Tray Activation • Monopoly / Year of Plenty Dialogs • 5-6 Player SBP Flag Alert</text>
+  </g>
+
+  <!-- LEFT: DEV CARD ACTIVATION TRAY (Flow 8) -->
+  <g id="Dev-Card-Tray" transform="translate(60, 110)" filter="url(#modal-shadow)">
+    <rect width="640" height="710" rx="18" fill="url(#modal-bg)" stroke="#1d64a6" stroke-width="2"/>
+
+    <g transform="translate(32, 36)">
+      <text font-family="'Bricolage Grotesque', sans-serif" font-size="24" font-weight="bold" fill="#ffffff">Your Development Cards</text>
+      <text y="22" font-size="13" fill="#8cb3d9">Play max 1 Knight or Progress card per turn (cannot play turn purchased).</text>
+    </g>
+
+    <!-- 3 Cards in Hand -->
+    <g transform="translate(32, 85)">
+      <!-- 1. Playable Knight Card (Ready to Play) -->
+      <g transform="translate(0, 0)" filter="url(#glow-gold)">
+        <rect width="175" height="240" rx="10" fill="#132b45" stroke="#38bdf8" stroke-width="3"/>
+        <rect x="8" y="8" width="159" height="34" rx="4" fill="#081e33"/>
+        <text x="87" y="31" font-size="14" font-weight="bold" fill="#38bdf8" text-anchor="middle">⚔ KNIGHT</text>
+        <circle cx="87" cy="110" r="40" fill="#040e1a" stroke="#38bdf8" stroke-width="1.5"/>
+        <polygon points="76,96 98,96 87,130" fill="#cbd5e1"/>
+        <text x="87" y="170" font-size="11" fill="#cbd5e1" text-anchor="middle">Move Robber &amp; Steal</text>
+        <g transform="translate(18, 190)">
+          <rect width="139" height="36" rx="6" fill="#0284c7"/>
+          <text x="69" y="23" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">PLAY CARD ➜</text>
+        </g>
+      </g>
+
+      <!-- 2. Year of Plenty Card (Bought This Turn -> LOCKED) -->
+      <g transform="translate(200, 0)" opacity="0.6">
+        <rect width="175" height="240" rx="10" fill="#132b45" stroke="#64748b" stroke-width="1.5"/>
+        <rect x="8" y="8" width="159" height="34" rx="4" fill="#081e33"/>
+        <text x="87" y="31" font-size="13" font-weight="bold" fill="#facc15" text-anchor="middle">YEAR OF PLENTY</text>
+        <circle cx="87" cy="110" r="40" fill="#040e1a" stroke="#64748b" stroke-width="1"/>
+        <text x="87" y="115" font-size="28" text-anchor="middle">🎁</text>
+        <text x="87" y="170" font-size="11" fill="#94a3b8" text-anchor="middle">Take 2 Bank Cards</text>
+        <!-- Lock Overlay Pill -->
+        <g transform="translate(18, 190)">
+          <rect width="139" height="36" rx="6" fill="#1e293b"/>
+          <text x="69" y="23" font-size="11" font-weight="bold" fill="#f87171" text-anchor="middle">🔒 Playable next turn</text>
+        </g>
+      </g>
+
+      <!-- 3. Victory Point Card (Chapel) -->
+      <g transform="translate(400, 0)" filter="url(#glow-gold)">
+        <rect width="175" height="240" rx="10" fill="#1a3528" stroke="#fbbf24" stroke-width="3"/>
+        <rect x="8" y="8" width="159" height="34" rx="4" fill="#091d13"/>
+        <text x="87" y="31" font-size="13" font-weight="bold" fill="#fbbf24" text-anchor="middle">🏆 CHAPEL (+1 VP)</text>
+        <circle cx="87" cy="110" r="40" fill="#040e1a" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="87" y="118" font-size="34" text-anchor="middle">⛪</text>
+        <text x="87" y="170" font-size="12" font-weight="bold" fill="#fbbf24" text-anchor="middle">+1 VICTORY POINT</text>
+        <g transform="translate(18, 190)">
+          <rect width="139" height="36" rx="6" fill="#064e3b"/>
+          <text x="69" y="23" font-size="11" fill="#a7f3d0" text-anchor="middle">Revealed on Win</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Monopoly Action Dialog Preview (Bottom Half) -->
+    <g transform="translate(32, 360)">
+      <rect width="576" height="300" rx="12" fill="#051c33" stroke="#1d4d7a" stroke-width="1.5"/>
+      <text x="24" y="28" font-size="14" font-weight="bold" fill="#c084fc">MONOPOLY CARD ACTIVATION DIALOG</text>
+      <text x="24" y="48" font-size="12" fill="#cbd5e1">Choose 1 resource: All other players must surrender their entire supply of that resource.</text>
+
+      <!-- 5 Resource Choice Cards -->
+      <g transform="translate(24, 70)">
+        <g transform="translate(0, 0)"><rect width="90" height="90" rx="8" fill="#0a2e52" stroke="#3b82f6"/><text x="45" y="42" font-size="30" text-anchor="middle">🪵</text><text x="45" y="72" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Lumber</text></g>
+        <g transform="translate(105, 0)"><rect width="90" height="90" rx="8" fill="#ba5d2c" stroke="#fed7aa" stroke-width="2" filter="url(#glow-gold)"/><text x="45" y="42" font-size="30" text-anchor="middle">🧱</text><text x="45" y="72" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Brick (Selected)</text></g>
+        <g transform="translate(210, 0)"><rect width="90" height="90" rx="8" fill="#0a2e52" stroke="#3b82f6"/><text x="45" y="42" font-size="30" text-anchor="middle">🐑</text><text x="45" y="72" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Wool</text></g>
+        <g transform="translate(315, 0)"><rect width="90" height="90" rx="8" fill="#0a2e52" stroke="#3b82f6"/><text x="45" y="42" font-size="30" text-anchor="middle">🌾</text><text x="45" y="72" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Grain</text></g>
+        <g transform="translate(420, 0)"><rect width="90" height="90" rx="8" fill="#0a2e52" stroke="#3b82f6"/><text x="45" y="42" font-size="30" text-anchor="middle">⛰</text><text x="45" y="72" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Ore</text></g>
+      </g>
+
+      <!-- Claim Monopoly CTA -->
+      <g transform="translate(24, 210)">
+        <rect width="528" height="50" rx="10" fill="#a855f7" filter="url(#shadow-md)"/>
+        <text x="264" y="32" font-family="'Bricolage Grotesque', sans-serif" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">Claim All Brick from Players</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT: 5-6 PLAYER SPECIAL BUILD PHASE (Flow 9) -->
+  <g id="Special-Build-Phase-Screen" transform="translate(740, 110)" filter="url(#modal-shadow)">
+    <rect width="640" height="710" rx="18" fill="url(#modal-bg)" stroke="#ef4444" stroke-width="2"/>
+
+    <!-- Red Flag Alert Top Banner -->
+    <rect width="640" height="70" rx="18" fill="#dc2626" filter="url(#shadow-md)"/>
+    <text x="40" y="36" font-size="30">🚩</text>
+    <g transform="translate(85, 26)">
+      <text font-family="'Bricolage Grotesque', sans-serif" font-size="20" font-weight="bold" fill="#ffffff">5-6 PLAYER SPECIAL BUILD PHASE ACTIVE</text>
+      <text y="20" font-size="12" fill="#fecaca">Between opponent turns, non-active players may build or buy development cards.</text>
+    </g>
+
+    <!-- Turn Window Indicator -->
+    <g transform="translate(32, 100)">
+      <rect width="576" height="70" rx="10" fill="#051c33" stroke="#38bdf8" stroke-width="2"/>
+      <g transform="translate(20, 20)">
+        <text font-size="15" font-weight="bold" fill="#fff">Current Window: Bob (You)</text>
+        <text y="20" font-size="12" fill="#7fa6c9">You may build roads, settlements, cities, or buy dev cards.</text>
+      </g>
+      <!-- Timer -->
+      <g transform="translate(450, 15)">
+        <rect width="105" height="40" rx="6" fill="#041527" stroke="#f06800" stroke-width="1.5"/>
+        <text x="52" y="16" font-size="10" font-weight="bold" fill="#ffaa66" text-anchor="middle">SBP TIMER</text>
+        <text x="52" y="32" font-family="monospace" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">00:24</text>
+      </g>
+    </g>
+
+    <!-- Allowed vs Forbidden Legend -->
+    <g transform="translate(32, 195)">
+      <rect width="576" height="130" rx="10" fill="#03111e" stroke="#1e4e7a"/>
+      <g transform="translate(24, 24)">
+        <text font-size="13" font-weight="bold" fill="#4ade80">ALLOWED IN SBP (✅)</text>
+        <text y="24" font-size="12" fill="#cbd5e1">• Build Roads, Settlements, &amp; Cities</text>
+        <text y="44" font-size="12" fill="#cbd5e1">• Buy Development Cards</text>
+      </g>
+      <g transform="translate(300, 24)">
+        <text font-size="13" font-weight="bold" fill="#f87171">FORBIDDEN IN SBP (❌)</text>
+        <text y="24" font-size="12" fill="#cbd5e1">• No Trading (neither bank nor players)</text>
+        <text y="44" font-size="12" fill="#cbd5e1">• No Playing Development Cards</text>
+        <text y="64" font-size="12" fill="#cbd5e1">• Cannot claim victory (waits for own turn)</text>
+      </g>
+    </g>
+
+    <!-- SBP Action Dock -->
+    <g transform="translate(32, 350)">
+      <text x="0" y="0" font-size="14" font-weight="bold" fill="#ffd54f">SBP BUILD CONTROLS</text>
+
+      <g transform="translate(0, 15)">
+        <!-- Road -->
+        <rect width="135" height="60" rx="8" fill="#0f3d69" stroke="#3b82f6"/>
+        <text x="67" y="26" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">🛣 Road</text>
+        <text x="67" y="46" font-size="12" fill="#ffd54f" text-anchor="middle">🪵1 🧱1</text>
+
+        <!-- Settlement -->
+        <g transform="translate(145, 0)">
+          <rect width="140" height="60" rx="8" fill="#0f3d69" stroke="#3b82f6"/>
+          <text x="70" y="26" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">🏠 Settlement</text>
+          <text x="70" y="46" font-size="12" fill="#ffd54f" text-anchor="middle">🪵1 🧱1 🐑1 🌾1</text>
+        </g>
+
+        <!-- City -->
+        <g transform="translate(295, 0)">
+          <rect width="135" height="60" rx="8" fill="#0f3d69" stroke="#3b82f6"/>
+          <text x="67" y="26" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">🏛 City</text>
+          <text x="67" y="46" font-size="12" fill="#ffd54f" text-anchor="middle">🌾2 ⛰3</text>
+        </g>
+
+        <!-- Buy Dev -->
+        <g transform="translate(440, 0)">
+          <rect width="135" height="60" rx="8" fill="#0f3d69" stroke="#3b82f6"/>
+          <text x="67" y="26" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">🃏 Dev Card</text>
+          <text x="67" y="46" font-size="12" fill="#ffd54f" text-anchor="middle">🐑1 🌾1 ⛰1</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Pass SBP Window Button -->
+    <g transform="translate(32, 580)">
+      <rect width="576" height="55" rx="10" fill="#dc2626" filter="url(#shadow-md)"/>
+      <text x="288" y="34" font-family="'Bricolage Grotesque', sans-serif" font-size="17" font-weight="bold" fill="#fff" text-anchor="middle">Pass Build Window ➜</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" style="background:#03111e; font-family:'Rubik', system-ui, sans-serif;">
+  <defs>
+    <filter id="modal-shadow"><feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000" flood-opacity="0.8"/></filter>
+    <filter id="shadow-md"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/></filter>
+    <filter id="glow-red"><feGaussianBlur stdDeviation="8" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
+
+    <linearGradient id="modal-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f3d69"/><stop offset="100%" stop-color="#072644"/></linearGradient>
+    <linearGradient id="danger-bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ef4444"/><stop offset="100%" stop-color="#991b1b"/></linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="#041a2e"/>
+
+  <!-- Title Indicator -->
+  <g transform="translate(60, 40)">
+    <text font-family="'Bricolage Grotesque', sans-serif" font-size="28" font-weight="bold" fill="#ffffff">FLOW 7: THE ROBBER EVENT &amp; DISCARD HALF</text>
+    <text font-size="14" fill="#f87171" y="24">Rolling 7 Event Flow • Simultaneous Discard Half Modal • 3D Pawn Relocation &amp; Circular Victim Steal Wheel</text>
+  </g>
+
+  <!-- SPLIT VIEW: SCREEN A (DISCARD MODAL) & SCREEN B (VICTIM STEAL WHEEL) -->
+  
+  <!-- LEFT: SCREEN A — DISCARD HALF MODAL (For players with 8+ cards) -->
+  <g id="Screen-A-Discard-Modal" transform="translate(60, 110)" filter="url(#modal-shadow)">
+    <rect width="620" height="710" rx="18" fill="url(#modal-bg)" stroke="#ef4444" stroke-width="2"/>
+    <!-- Top Alert Banner -->
+    <rect width="620" height="54" rx="18" fill="url(#danger-bar)"/>
+    <text x="310" y="34" font-family="'Bricolage Grotesque', sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">🚨 A 7 WAS ROLLED — THE ROBBER ATTACKS!</text>
+
+    <!-- Modal Content -->
+    <g transform="translate(32, 80)">
+      <text font-family="'Bricolage Grotesque', sans-serif" font-size="22" font-weight="bold" fill="#ffffff">Discard 4 Cards</text>
+      <text y="24" font-size="13" fill="#cbd5e1">You hold 9 resource cards. The rules require discarding half (4 cards, rounded down).</text>
+      
+      <!-- Steppers for Hand -->
+      <g transform="translate(0, 50)">
+        <!-- Wood (Have 3, select 2) -->
+        <g transform="translate(0, 0)">
+          <rect width="556" height="54" rx="8" fill="#051c33" stroke="#1e4e7a"/>
+          <text x="18" y="34" font-size="22">🪵</text>
+          <text x="52" y="32" font-size="14" font-weight="bold" fill="#fff">Lumber (Wood)</text>
+          <text x="165" y="32" font-size="12" fill="#7fa6c9">In hand: 3</text>
+          <g transform="translate(420, 12)">
+            <rect width="30" height="30" rx="6" fill="#0f3d69"/><text x="15" y="21" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">−</text>
+            <text x="55" y="21" font-size="17" font-weight="bold" fill="#ffd54f" text-anchor="middle">2</text>
+            <rect x="75" width="30" height="30" rx="6" fill="#0f3d69"/><text x="90" y="21" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">+</text>
+          </g>
+        </g>
+
+        <!-- Brick (Have 2, select 1) -->
+        <g transform="translate(0, 64)">
+          <rect width="556" height="54" rx="8" fill="#051c33" stroke="#1e4e7a"/>
+          <text x="18" y="34" font-size="22">🧱</text>
+          <text x="52" y="32" font-size="14" font-weight="bold" fill="#fff">Brick</text>
+          <text x="165" y="32" font-size="12" fill="#7fa6c9">In hand: 2</text>
+          <g transform="translate(420, 12)">
+            <rect width="30" height="30" rx="6" fill="#0f3d69"/><text x="15" y="21" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">−</text>
+            <text x="55" y="21" font-size="17" font-weight="bold" fill="#ffd54f" text-anchor="middle">1</text>
+            <rect x="75" width="30" height="30" rx="6" fill="#0f3d69"/><text x="90" y="21" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">+</text>
+          </g>
+        </g>
+
+        <!-- Sheep (Have 2, select 1) -->
+        <g transform="translate(0, 128)">
+          <rect width="556" height="54" rx="8" fill="#051c33" stroke="#1e4e7a"/>
+          <text x="18" y="34" font-size="22">🐑</text>
+          <text x="52" y="32" font-size="14" font-weight="bold" fill="#fff">Wool (Sheep)</text>
+          <text x="165" y="32" font-size="12" fill="#7fa6c9">In hand: 2</text>
+          <g transform="translate(420, 12)">
+            <rect width="30" height="30" rx="6" fill="#0f3d69"/><text x="15" y="21" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">−</text>
+            <text x="55" y="21" font-size="17" font-weight="bold" fill="#ffd54f" text-anchor="middle">1</text>
+            <rect x="75" width="30" height="30" rx="6" fill="#0f3d69"/><text x="90" y="21" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">+</text>
+          </g>
+        </g>
+
+        <!-- Wheat (Have 1, select 0) -->
+        <g transform="translate(0, 192)">
+          <rect width="556" height="54" rx="8" fill="#051c33" stroke="#1e4e7a"/>
+          <text x="18" y="34" font-size="22">🌾</text>
+          <text x="52" y="32" font-size="14" font-weight="bold" fill="#fff">Grain (Wheat)</text>
+          <text x="165" y="32" font-size="12" fill="#7fa6c9">In hand: 1</text>
+          <g transform="translate(420, 12)">
+            <rect width="30" height="30" rx="6" fill="#0f3d69"/><text x="15" y="21" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">−</text>
+            <text x="55" y="21" font-size="17" font-weight="bold" fill="#94a3b8" text-anchor="middle">0</text>
+            <rect x="75" width="30" height="30" rx="6" fill="#0f3d69"/><text x="90" y="21" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">+</text>
+          </g>
+        </g>
+
+        <!-- Ore (Have 1, select 0) -->
+        <g transform="translate(0, 256)">
+          <rect width="556" height="54" rx="8" fill="#051c33" stroke="#1e4e7a"/>
+          <text x="18" y="34" font-size="22">⛰</text>
+          <text x="52" y="32" font-size="14" font-weight="bold" fill="#fff">Ore</text>
+          <text x="165" y="32" font-size="12" fill="#7fa6c9">In hand: 1</text>
+          <g transform="translate(420, 12)">
+            <rect width="30" height="30" rx="6" fill="#0f3d69"/><text x="15" y="21" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">−</text>
+            <text x="55" y="21" font-size="17" font-weight="bold" fill="#94a3b8" text-anchor="middle">0</text>
+            <rect x="75" width="30" height="30" rx="6" fill="#0f3d69"/><text x="90" y="21" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">+</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Status Tally & Submit -->
+      <g transform="translate(0, 390)">
+        <rect width="556" height="48" rx="8" fill="#041527"/>
+        <text x="20" y="30" font-size="14" fill="#cbd5e1">Selected to discard:</text>
+        <text x="175" y="31" font-family="'Bricolage Grotesque', sans-serif" font-size="18" font-weight="bold" fill="#86efac">4 of 4 required ✓</text>
+
+        <rect y="60" width="556" height="50" rx="10" fill="#ef4444" filter="url(#glow-red)"/>
+        <text x="278" y="92" font-family="'Bricolage Grotesque', sans-serif" font-size="17" font-weight="bold" fill="#fff" text-anchor="middle">Confirm &amp; Discard 4 Cards</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT: SCREEN B — VICTIM STEAL TARGET WHEEL (Active Player's Turn) -->
+  <g id="Screen-B-Steal-Target-Wheel" transform="translate(740, 110)" filter="url(#modal-shadow)">
+    <rect width="640" height="710" rx="18" fill="url(#modal-bg)" stroke="#f06800" stroke-width="2"/>
+    
+    <!-- Top Header -->
+    <g transform="translate(32, 36)">
+      <text font-family="'Bricolage Grotesque', sans-serif" font-size="24" font-weight="bold" fill="#ffffff">Step 2: Steal 1 Resource</text>
+      <text y="22" font-size="13" fill="#fdba74">Robber placed on Pasture (Token #6). Choose an adjacent opponent to steal from.</text>
+    </g>
+
+    <!-- 3D Robber Pawn with Placement Elevation Shadow -->
+    <g transform="translate(320, 220)" filter="url(#shadow-md)">
+      <ellipse cx="0" cy="55" rx="35" ry="12" fill="rgba(0,0,0,0.6)"/>
+      <polygon points="0,-40 -20,25 20,25" fill="#1f2937"/>
+      <circle cx="0" cy="-45" r="16" fill="#111827" stroke="#374151" stroke-width="2"/>
+      <text x="0" y="80" font-size="12" font-weight="bold" fill="#ffd54f" text-anchor="middle">ROBBER PLACED AT PASTURE #6</text>
+    </g>
+
+    <!-- Circular Victim Selection Cards -->
+    <g transform="translate(32, 360)">
+      <text x="0" y="0" font-size="14" font-weight="bold" fill="#ffd54f">ELIGIBLE VICTIMS (ADJACENT SETTLEMENTS)</text>
+
+      <!-- Victim 1: Alice (Red - 5 cards) -->
+      <g transform="translate(0, 20)" filter="url(#shadow-md)">
+        <rect width="576" height="76" rx="12" fill="#061c33" stroke="#ef4444" stroke-width="2"/>
+        <circle cx="40" cy="38" r="22" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+        <text x="75" y="32" font-size="16" font-weight="bold" fill="#fff">Alice</text>
+        <text x="75" y="52" font-size="12" fill="#fca5a5">🏠 Settlement on vertex #18 • Holds 5 cards</text>
+        <g transform="translate(420, 18)">
+          <rect width="130" height="40" rx="8" fill="#f06800"/>
+          <text x="65" y="25" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">🎯 Steal from Alice</text>
+        </g>
+      </g>
+
+      <!-- Victim 2: Carol (Orange - 3 cards) -->
+      <g transform="translate(0, 115)" filter="url(#shadow-md)">
+        <rect width="576" height="76" rx="12" fill="#061c33" stroke="#f97316" stroke-width="2"/>
+        <circle cx="40" cy="38" r="22" fill="#f97316" stroke="#fff" stroke-width="2"/>
+        <text x="75" y="32" font-size="16" font-weight="bold" fill="#fff">Carol</text>
+        <text x="75" y="52" font-size="12" fill="#fdba74">🏛 City on vertex #19 • Holds 3 cards</text>
+        <g transform="translate(420, 18)">
+          <rect width="130" height="40" rx="8" fill="#f06800"/>
+          <text x="65" y="25" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">🎯 Steal from Carol</text>
+        </g>
+      </g>
+
+      <!-- Steal Mechanics Info Box -->
+      <g transform="translate(0, 215)">
+        <rect width="576" height="60" rx="8" fill="#03111e" stroke="#1d4d7a"/>
+        <text x="20" y="26" font-size="12" fill="#93c5fd">ℹ You will blindly draw 1 random resource card from their hand.</text>
+        <text x="20" y="44" font-size="12" fill="#7fa6c9">Development cards cannot be stolen.</text>
+      </g>
+    </g>
+  </g>
+</svg>

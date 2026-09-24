@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" style="background:#03111e; font-family:'Rubik', system-ui, sans-serif;">
+  <defs>
+    <filter id="modal-shadow"><feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000" flood-opacity="0.75"/></filter>
+    <filter id="shadow-sm"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.4"/></filter>
+    <filter id="glow-orange"><feGaussianBlur stdDeviation="8" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
+
+    <linearGradient id="modal-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f3d69"/><stop offset="100%" stop-color="#072644"/></linearGradient>
+    <linearGradient id="card-inner" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#061c33"/><stop offset="100%" stop-color="#031120"/></linearGradient>
+  </defs>
+
+  <!-- Dimmed Background Board Preview (Behind Modal Overlay) -->
+  <g opacity="0.35">
+    <rect width="1440" height="900" fill="#041a2e"/>
+    <circle cx="720" cy="450" r="280" fill="#0f3d69" opacity="0.2"/>
+  </g>
+
+  <!-- Title Indicator -->
+  <g transform="translate(60, 45)">
+    <text font-family="'Bricolage Grotesque', sans-serif" font-size="28" font-weight="bold" fill="#ffffff">FLOW 6: TRADE NEGOTIATION DOCK</text>
+    <text font-size="14" fill="#60a5fa" y="24">Interactive Negotiation Modal • Bank/Maritime Harbor Rates &amp; Player-to-Player Offers with Live Counter-Proposals</text>
+  </g>
+
+  <!-- CENTER TRADE MODAL (Width: 680px, Height: 710px) -->
+  <g id="Trade-Modal-Window" transform="translate(380, 110)" filter="url(#modal-shadow)">
+    <!-- Main Modal Surface -->
+    <rect width="680" height="710" rx="18" fill="url(#modal-bg)" stroke="#1d64a6" stroke-width="2"/>
+
+    <!-- Modal Header -->
+    <g transform="translate(32, 36)">
+      <text font-family="'Bricolage Grotesque', sans-serif" font-size="24" font-weight="bold" fill="#ffffff">Trade Exchange</text>
+      <text y="22" font-size="13" fill="#8cb3d9">Propose a trade to the table or barter directly with maritime harbors.</text>
+      <!-- Close Button (Top Right) -->
+      <g transform="translate(585, -12)">
+        <circle cx="16" cy="16" r="16" fill="#041527" stroke="#1d4d7a"/>
+        <text x="16" y="22" font-size="16" fill="#cbd5e1" text-anchor="middle">✕</text>
+      </g>
+    </g>
+
+    <!-- Tab Selector (Bank vs Players) -->
+    <g transform="translate(32, 85)">
+      <rect width="616" height="46" rx="10" fill="#04182a"/>
+      <!-- Bank Tab (Inactive) -->
+      <g transform="translate(4, 4)">
+        <rect width="300" height="38" rx="8" fill="transparent"/>
+        <text x="150" y="24" font-size="14" font-weight="bold" fill="#7fa6c9" text-anchor="middle">⚓ Maritime &amp; Harbors (2:1 / 3:1 / 4:1)</text>
+      </g>
+      <!-- Player Trade Tab (Active) -->
+      <g transform="translate(308, 4)">
+        <rect width="304" height="38" rx="8" fill="#1062b0" stroke="#38bdf8" stroke-width="1.5"/>
+        <text x="152" y="24" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">👥 Player-to-Player Trade</text>
+      </g>
+    </g>
+
+    <!-- PROPOSE AN OFFER DOCK (Give vs Receive Columns) -->
+    <g transform="translate(32, 150)">
+      <rect width="616" height="235" rx="12" fill="url(#card-inner)" stroke="#163f66" stroke-width="1.5"/>
+      <text x="24" y="28" font-size="14" font-weight="bold" fill="#ffd54f">BUILD YOUR PROPOSAL</text>
+
+      <!-- Left Column: You Give (with hand limits) -->
+      <g transform="translate(24, 45)">
+        <text font-size="12" font-weight="bold" fill="#f87171">YOU GIVE</text>
+        
+        <!-- Wood Stepper -->
+        <g transform="translate(0, 15)">
+          <text font-size="20">🪵</text>
+          <text x="32" y="16" font-size="13" fill="#cbd5e1">Wood (have 2)</text>
+          <g transform="translate(180, 0)">
+            <rect width="24" height="24" rx="4" fill="#0f3d69"/><text x="12" y="16" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">−</text>
+            <text x="44" y="17" font-size="15" font-weight="bold" fill="#ffd54f" text-anchor="middle">1</text>
+            <rect x="62" y="0" width="24" height="24" rx="4" fill="#0f3d69"/><text x="74" y="17" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">+</text>
+          </g>
+        </g>
+        <!-- Brick Stepper -->
+        <g transform="translate(0, 50)">
+          <text font-size="20">🧱</text>
+          <text x="32" y="16" font-size="13" fill="#cbd5e1">Brick (have 1)</text>
+          <g transform="translate(180, 0)">
+            <rect width="24" height="24" rx="4" fill="#0f3d69"/><text x="12" y="16" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">−</text>
+            <text x="44" y="17" font-size="15" font-weight="bold" fill="#cbd5e1" text-anchor="middle">0</text>
+            <rect x="62" y="0" width="24" height="24" rx="4" fill="#0f3d69"/><text x="74" y="17" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">+</text>
+          </g>
+        </g>
+        <!-- Ore Stepper -->
+        <g transform="translate(0, 85)">
+          <text font-size="20">⛰</text>
+          <text x="32" y="16" font-size="13" fill="#cbd5e1">Ore (have 1)</text>
+          <g transform="translate(180, 0)">
+            <rect width="24" height="24" rx="4" fill="#0f3d69"/><text x="12" y="16" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">−</text>
+            <text x="44" y="17" font-size="15" font-weight="bold" fill="#cbd5e1" text-anchor="middle">0</text>
+            <rect x="62" y="0" width="24" height="24" rx="4" fill="#0f3d69"/><text x="74" y="17" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">+</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Center Divider Arrow -->
+      <g transform="translate(308, 115)">
+        <circle cx="0" cy="0" r="18" fill="#f06800" filter="url(#shadow-sm)"/>
+        <text x="0" y="6" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">➔</text>
+      </g>
+
+      <!-- Right Column: You Receive -->
+      <g transform="translate(340, 45)">
+        <text font-size="12" font-weight="bold" fill="#4ade80">YOU RECEIVE</text>
+
+        <!-- Wheat Stepper -->
+        <g transform="translate(0, 15)">
+          <text font-size="20">🌾</text>
+          <text x="32" y="16" font-size="13" fill="#cbd5e1">Wheat</text>
+          <g transform="translate(160, 0)">
+            <rect width="24" height="24" rx="4" fill="#0f3d69"/><text x="12" y="16" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">−</text>
+            <text x="44" y="17" font-size="15" font-weight="bold" fill="#ffd54f" text-anchor="middle">1</text>
+            <rect x="62" y="0" width="24" height="24" rx="4" fill="#0f3d69"/><text x="74" y="17" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">+</text>
+          </g>
+        </g>
+        <!-- Sheep Stepper -->
+        <g transform="translate(0, 50)">
+          <text font-size="20">🐑</text>
+          <text x="32" y="16" font-size="13" fill="#cbd5e1">Sheep</text>
+          <g transform="translate(160, 0)">
+            <rect width="24" height="24" rx="4" fill="#0f3d69"/><text x="12" y="16" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">−</text>
+            <text x="44" y="17" font-size="15" font-weight="bold" fill="#cbd5e1" text-anchor="middle">0</text>
+            <rect x="62" y="0" width="24" height="24" rx="4" fill="#0f3d69"/><text x="74" y="17" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">+</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Broadcast Offer CTA Button -->
+      <g transform="translate(24, 180)">
+        <rect width="568" height="42" rx="8" fill="#f06800" filter="url(#glow-orange)"/>
+        <text x="284" y="26" font-family="'Bricolage Grotesque', sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Broadcast Offer: Give 🪵1 ➜ Receive 🌾1</text>
+      </g>
+    </g>
+
+    <!-- LIVE OPEN OFFERS & COUNTER-OFFERS TRAY -->
+    <g transform="translate(32, 400)">
+      <text x="0" y="0" font-size="14" font-weight="bold" fill="#ffd54f">LIVE TABLE OFFERS &amp; COUNTER-PROPOSALS (3)</text>
+
+      <!-- Offer Card 1: Alice's Counter-Proposal -->
+      <g transform="translate(0, 15)" filter="url(#shadow-sm)">
+        <rect width="616" height="72" rx="10" fill="#051f38" stroke="#ff4d4d" stroke-width="2"/>
+        <circle cx="28" cy="36" r="14" fill="#ff4d4d"/>
+        <text x="52" y="32" font-size="14" font-weight="bold" fill="#fff">Alice countered:</text>
+        <text x="52" y="50" font-size="12" fill="#93c5fd">Offers 🪵1 🧱1 for your 🌾2</text>
+
+        <!-- Response Action Buttons (Right) -->
+        <g transform="translate(420, 18)">
+          <rect width="85" height="36" rx="6" fill="#15803d"/>
+          <text x="42" y="23" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Accept ✓</text>
+
+          <rect x="95" width="85" height="36" rx="6" fill="#7f1d1d"/>
+          <text x="137" y="23" font-size="12" font-weight="bold" fill="#fca5a5" text-anchor="middle">Decline ✕</text>
+        </g>
+      </g>
+
+      <!-- Offer Card 2: Carol's Direct Offer -->
+      <g transform="translate(0, 100)" filter="url(#shadow-sm)">
+        <rect width="616" height="72" rx="10" fill="#061c33" stroke="#ea580c" stroke-width="1.5"/>
+        <circle cx="28" cy="36" r="14" fill="#ea580c"/>
+        <text x="52" y="32" font-size="14" font-weight="bold" fill="#fff">Carol offers:</text>
+        <text x="52" y="50" font-size="12" fill="#fdba74">Offers 🐑2 for anyone's ⛰1 Ore</text>
+
+        <g transform="translate(360, 18)">
+          <rect width="75" height="36" rx="6" fill="#0284c7"/>
+          <text x="37" y="23" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Counter</text>
+
+          <rect x="85" width="75" height="36" rx="6" fill="#15803d"/>
+          <text x="122" y="23" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Accept</text>
+
+          <rect x="170" width="75" height="36" rx="6" fill="#334155"/>
+          <text x="207" y="23" font-size="12" fill="#94a3b8" text-anchor="middle">Pass</text>
+        </g>
+      </g>
+
+      <!-- Offer Card 3: Your own open offer -->
+      <g transform="translate(0, 185)">
+        <rect width="616" height="55" rx="10" fill="#041629" stroke="#1d4d7a" stroke-width="1.5"/>
+        <text x="24" y="32" font-size="13" font-weight="bold" fill="#38bdf8">Your Open Offer: 🪵1 ➜ 🌾1</text>
+        <text x="380" y="32" font-size="11" fill="#7fa6c9">Waiting for table responses…</text>
+        <rect x="520" y="12" width="76" height="32" rx="6" fill="#dc2626"/>
+        <text x="558" y="32" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">Cancel</text>
+      </g>
+    </g>
+  </g>
+</svg>

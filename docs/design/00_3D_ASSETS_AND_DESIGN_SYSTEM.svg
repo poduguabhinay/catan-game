@@ -1,0 +1,615 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1600" width="2400" height="1600" style="background:#03111e; font-family:'Rubik', system-ui, sans-serif;">
+  <defs>
+    <filter id="shadow-sm"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.4"/></filter>
+    <filter id="shadow-md"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.55"/></filter>
+    <filter id="shadow-3d"><feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000" flood-opacity="0.6"/></filter>
+    <filter id="glow-gold"><feGaussianBlur stdDeviation="8" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
+
+    <!-- Biome Gradients (3D Lighting: Top Lit -> Deep Shadow) -->
+    <linearGradient id="forest-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#347a3e"/><stop offset="100%" stop-color="#1b4d24"/></linearGradient>
+    <linearGradient id="forest-slab" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1b4d24"/><stop offset="100%" stop-color="#0e2a14"/></linearGradient>
+    
+    <linearGradient id="hills-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#cf6832"/><stop offset="100%" stop-color="#8f3e15"/></linearGradient>
+    <linearGradient id="hills-slab" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8f3e15"/><stop offset="100%" stop-color="#542008"/></linearGradient>
+
+    <linearGradient id="pasture-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9bd448"/><stop offset="100%" stop-color="#5c9420"/></linearGradient>
+    <linearGradient id="pasture-slab" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5c9420"/><stop offset="100%" stop-color="#325410"/></linearGradient>
+
+    <linearGradient id="fields-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fed648"/><stop offset="100%" stop-color="#c99812"/></linearGradient>
+    <linearGradient id="fields-slab" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c99812"/><stop offset="100%" stop-color="#735404"/></linearGradient>
+
+    <linearGradient id="mountains-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9daab6"/><stop offset="100%" stop-color="#5a6773"/></linearGradient>
+    <linearGradient id="mountains-slab" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5a6773"/><stop offset="100%" stop-color="#2d353c"/></linearGradient>
+
+    <linearGradient id="desert-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ebd8a2"/><stop offset="100%" stop-color="#b89e60"/></linearGradient>
+    <linearGradient id="desert-slab" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b89e60"/><stop offset="100%" stop-color="#69562d"/></linearGradient>
+
+    <!-- 3D Wooden Pieces Gradients -->
+    <linearGradient id="wood-red" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff5252"/><stop offset="60%" stop-color="#cc0000"/><stop offset="100%" stop-color="#800000"/></linearGradient>
+    <linearGradient id="wood-blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#40c4ff"/><stop offset="60%" stop-color="#0080ff"/><stop offset="100%" stop-color="#004080"/></linearGradient>
+    <linearGradient id="wood-orange" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffb74d"/><stop offset="60%" stop-color="#f57c00"/><stop offset="100%" stop-color="#994d00"/></linearGradient>
+    <linearGradient id="wood-white" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffffff"/><stop offset="60%" stop-color="#e0e0e0"/><stop offset="100%" stop-color="#9e9e9e"/></linearGradient>
+    <linearGradient id="wood-green" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#69f0ae"/><stop offset="60%" stop-color="#00c853"/><stop offset="100%" stop-color="#006020"/></linearGradient>
+    <linearGradient id="wood-brown" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#bcaaa4"/><stop offset="60%" stop-color="#795548"/><stop offset="100%" stop-color="#3e2723"/></linearGradient>
+
+    <!-- Card Gradients -->
+    <linearGradient id="card-base" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fffdf7"/><stop offset="100%" stop-color="#ede3cd"/></linearGradient>
+    <linearGradient id="card-gold-border" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e6ca7d"/><stop offset="100%" stop-color="#9e7c33"/></linearGradient>
+  </defs>
+
+  <!-- Title Header -->
+  <g id="Header" transform="translate(80, 70)">
+    <text font-family="'Bricolage Grotesque', sans-serif" font-size="36" font-weight="bold" fill="#ffffff" letter-spacing="1">CATAN MULTIPLAYER — 3D GRAPHICAL ASSETS &amp; VISUAL SYSTEM</text>
+    <text font-size="16" fill="#7fa6c9" y="32">Figma Asset Library • Isometric 3D Hex Biomes, Hand-Carved Wooden Pieces, 3D Tumbling Dice, &amp; Illustrated Card Trays</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- 1. ISOMETRIC 3D ELEVATED HEX BIOMES -->
+  <!-- ========================================================================= -->
+  <g id="1-Isometric-3D-Hex-Biomes" transform="translate(80, 160)">
+    <text font-family="'Bricolage Grotesque', sans-serif" font-size="22" font-weight="bold" fill="#ffd54f">1. ELEVATED 3D ISOMETRIC HEX BIOMES (TERRAIN SLABS)</text>
+    <text font-size="14" fill="#8cb3d9" y="24">Each biome is an extruded 3D hexagonal pedestal with beveled stone base, atmospheric lighting, and high-detail terrain props.</text>
+
+    <!-- 3D FOREST HEX -->
+    <g id="3D-Hex-Forest" transform="translate(130, 180)" filter="url(#shadow-3d)">
+      <!-- 3D Extruded Base Slabs (Sides) -->
+      <polygon points="-86.6,50 0,100 0,130 -86.6,80" fill="url(#forest-slab)" opacity="0.95"/>
+      <polygon points="0,100 86.6,50 86.6,80 0,130" fill="url(#forest-slab)" opacity="0.75"/>
+      <!-- Top Hex Surface -->
+      <polygon points="0,-100 86.6,-50 86.6,50 0,100 -86.6,50 -86.6,-50" fill="url(#forest-top)" stroke="#3da64c" stroke-width="2.5"/>
+      <polygon points="0,-94 81,-47 81,47 0,94 -81,47 -81,-47" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+
+      <!-- 3D Isometric Tree Clusters -->
+      <!-- Big Center Pine -->
+      <g transform="translate(0, -10)">
+        <polygon points="-26,30 0,-45 26,30" fill="#1b4723"/>
+        <polygon points="0,-45 26,30 0,35" fill="#0d2b13"/>
+        <polygon points="-22,10 0,-45 0,15" fill="#2d6e38"/>
+        <!-- Second tier -->
+        <polygon points="-20,5 0,-55 20,5" fill="#296b34"/>
+        <polygon points="0,-55 20,5 0,10" fill="#153b1b"/>
+        <!-- Third tier -->
+        <polygon points="-14,-20 0,-68 14,-20" fill="#3b8f4a"/>
+        <polygon points="0,-68 14,-20 0,-15" fill="#1e5426"/>
+      </g>
+      <!-- Left Tree -->
+      <g transform="translate(-40, -5) scale(0.7)">
+        <polygon points="-24,30 0,-50 24,30" fill="#1b4723"/>
+        <polygon points="0,-50 24,30 0,35" fill="#0d2b13"/>
+        <polygon points="-18,-10 0,-62 18,-10" fill="#2d6e38"/>
+      </g>
+      <!-- Right Tree -->
+      <g transform="translate(42, 5) scale(0.75)">
+        <polygon points="-24,30 0,-50 24,30" fill="#1b4723"/>
+        <polygon points="0,-50 24,30 0,35" fill="#0d2b13"/>
+        <polygon points="-18,-10 0,-62 18,-10" fill="#3b8f4a"/>
+      </g>
+      <!-- Front Bush -->
+      <circle cx="-15" cy="45" r="14" fill="#2d6e38" filter="url(#shadow-sm)"/>
+      <circle cx="12" cy="48" r="16" fill="#1e5426" filter="url(#shadow-sm)"/>
+      
+      <!-- Badge -->
+      <rect x="-42" y="65" width="84" height="20" rx="4" fill="rgba(0,0,0,0.65)"/>
+      <text x="0" y="79" font-size="11" font-weight="bold" fill="#86efac" text-anchor="middle">FOREST (Wood)</text>
+    </g>
+
+    <!-- 3D HILLS HEX -->
+    <g id="3D-Hex-Hills" transform="translate(370, 180)" filter="url(#shadow-3d)">
+      <!-- Slabs -->
+      <polygon points="-86.6,50 0,100 0,130 -86.6,80" fill="url(#hills-slab)" opacity="0.95"/>
+      <polygon points="0,100 86.6,50 86.6,80 0,130" fill="url(#hills-slab)" opacity="0.75"/>
+      <!-- Top -->
+      <polygon points="0,-100 86.6,-50 86.6,50 0,100 -86.6,50 -86.6,-50" fill="url(#hills-top)" stroke="#f07c3f" stroke-width="2.5"/>
+      <polygon points="0,-94 81,-47 81,47 0,94 -81,47 -81,-47" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+
+      <!-- 3D Terraced Clay Quarry & Brick Stacks -->
+      <path d="M-60,10 C-30,-40 30,-30 65,-5 C70,25 35,50 -45,40 Z" fill="#9e4316" stroke="#4a1c06" stroke-width="2"/>
+      <path d="M-45,5 C-20,-25 25,-18 50,0 C55,20 25,36 -35,28 Z" fill="#c25721"/>
+      <!-- 3D Stack of Clay Bricks -->
+      <g transform="translate(0, 5)">
+        <!-- Layer 1 -->
+        <polygon points="-24,5 0,-7 24,5 0,17" fill="#f07c3f" stroke="#6e2808" stroke-width="1.5"/>
+        <polygon points="-24,5 0,17 0,27 -24,15" fill="#c25721"/>
+        <polygon points="0,17 24,5 24,15 0,27" fill="#8a340b"/>
+        <!-- Layer 2 -->
+        <polygon points="-16,-5 4,-15 24,-5 4,5" fill="#ff9966" stroke="#6e2808" stroke-width="1.5"/>
+        <polygon points="-16,-5 4,5 4,13 -16,3" fill="#e0692d"/>
+        <polygon points="4,5 24,-5 24,3 4,13" fill="#a84313"/>
+      </g>
+      
+      <rect x="-40" y="65" width="80" height="20" rx="4" fill="rgba(0,0,0,0.65)"/>
+      <text x="0" y="79" font-size="11" font-weight="bold" fill="#fdba74" text-anchor="middle">HILLS (Brick)</text>
+    </g>
+
+    <!-- 3D PASTURE HEX -->
+    <g id="3D-Hex-Pasture" transform="translate(610, 180)" filter="url(#shadow-3d)">
+      <polygon points="-86.6,50 0,100 0,130 -86.6,80" fill="url(#pasture-slab)" opacity="0.95"/>
+      <polygon points="0,100 86.6,50 86.6,80 0,130" fill="url(#pasture-slab)" opacity="0.75"/>
+      <polygon points="0,-100 86.6,-50 86.6,50 0,100 -86.6,50 -86.6,-50" fill="url(#pasture-top)" stroke="#a6e64c" stroke-width="2.5"/>
+      <polygon points="0,-94 81,-47 81,47 0,94 -81,47 -81,-47" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+
+      <!-- 3D Rolling Knolls -->
+      <ellipse cx="-15" cy="-10" rx="55" ry="32" fill="#75b52c"/>
+      <ellipse cx="25" cy="15" rx="45" ry="26" fill="#588c1f"/>
+      
+      <!-- 3D Stylized Fluffy Sheep -->
+      <g transform="translate(-15, -15) scale(1.1)" filter="url(#shadow-sm)">
+        <ellipse cx="0" cy="5" rx="16" ry="11" fill="rgba(0,0,0,0.25)"/> <!-- Shadow -->
+        <ellipse cx="0" cy="0" rx="18" ry="13" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+        <circle cx="-15" cy="-4" r="7" fill="#1e293b"/> <!-- Head -->
+        <ellipse cx="-14" cy="-9" rx="2" ry="4" fill="#1e293b" transform="rotate(-30, -14, -9)"/> <!-- Ear -->
+        <rect x="-8" y="10" width="3" height="9" fill="#1e293b" rx="1"/>
+        <rect x="6" y="10" width="3" height="9" fill="#1e293b" rx="1"/>
+      </g>
+      <!-- Small Lamb -->
+      <g transform="translate(32, 10) scale(0.75)" filter="url(#shadow-sm)">
+        <ellipse cx="0" cy="0" rx="16" ry="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+        <circle cx="-13" cy="-3" r="6" fill="#1e293b"/>
+        <rect x="-6" y="8" width="3" height="7" fill="#1e293b" rx="1"/>
+        <rect x="5" y="8" width="3" height="7" fill="#1e293b" rx="1"/>
+      </g>
+
+      <rect x="-42" y="65" width="84" height="20" rx="4" fill="rgba(0,0,0,0.65)"/>
+      <text x="0" y="79" font-size="11" font-weight="bold" fill="#bef264" text-anchor="middle">PASTURE (Sheep)</text>
+    </g>
+
+    <!-- 3D FIELDS HEX -->
+    <g id="3D-Hex-Fields" transform="translate(850, 180)" filter="url(#shadow-3d)">
+      <polygon points="-86.6,50 0,100 0,130 -86.6,80" fill="url(#fields-slab)" opacity="0.95"/>
+      <polygon points="0,100 86.6,50 86.6,80 0,130" fill="url(#fields-slab)" opacity="0.75"/>
+      <polygon points="0,-100 86.6,-50 86.6,50 0,100 -86.6,50 -86.6,-50" fill="url(#fields-top)" stroke="#ffdf6d" stroke-width="2.5"/>
+      <polygon points="0,-94 81,-47 81,47 0,94 -81,47 -81,-47" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+
+      <!-- 3D Furrowed Wheat Fields & Bundled Sheaves -->
+      <path d="M-65,-30 C-30,-10 30,-50 65,-30" stroke="#b08307" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M-72,-5 C-30,15 30,-25 72,-5" stroke="#997003" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M-70,20 C-30,40 30,0 70,20" stroke="#b08307" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M-60,45 C-30,65 30,25 60,45" stroke="#997003" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+      <!-- 3D Wheat Sheaf Bundle -->
+      <g transform="translate(0, -5)" filter="url(#shadow-md)">
+        <ellipse cx="0" cy="18" rx="14" ry="5" fill="rgba(0,0,0,0.3)"/>
+        <!-- Golden Sheaf Stalks -->
+        <path d="M-18,15 C-8,-5 -15,-30 0,-40 C15,-30 8,-5 18,15 C8,22 -8,22 -18,15 Z" fill="#ffe082" stroke="#b08307" stroke-width="2"/>
+        <!-- Red Rope Tie -->
+        <rect x="-14" y="-3" width="28" height="6" rx="2" fill="#ef4444" stroke="#991b1b" stroke-width="1"/>
+      </g>
+
+      <rect x="-40" y="65" width="80" height="20" rx="4" fill="rgba(0,0,0,0.65)"/>
+      <text x="0" y="79" font-size="11" font-weight="bold" fill="#fef08a" text-anchor="middle">FIELDS (Wheat)</text>
+    </g>
+
+    <!-- 3D MOUNTAINS HEX -->
+    <g id="3D-Hex-Mountains" transform="translate(1090, 180)" filter="url(#shadow-3d)">
+      <polygon points="-86.6,50 0,100 0,130 -86.6,80" fill="url(#mountains-slab)" opacity="0.95"/>
+      <polygon points="0,100 86.6,50 86.6,80 0,130" fill="url(#mountains-slab)" opacity="0.75"/>
+      <polygon points="0,-100 86.6,-50 86.6,50 0,100 -86.6,50 -86.6,-50" fill="url(#mountains-top)" stroke="#c2ccd6" stroke-width="2.5"/>
+      <polygon points="0,-94 81,-47 81,47 0,94 -81,47 -81,-47" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+
+      <!-- 3D Jagged Crags & Snow Caps -->
+      <!-- Rear Peak -->
+      <polygon points="-40,10 -15,-55 30,15" fill="#4b5563"/>
+      <polygon points="-15,-55 30,15 10,20 -15,-55" fill="#374151"/>
+      <polygon points="-15,-55 -3,-30 -22,-32" fill="#f1f5f9"/>
+
+      <!-- Main Center Peak (Front) -->
+      <polygon points="-55,45 10,-68 68,45" fill="#64748b" stroke="#1e293b" stroke-width="2"/>
+      <polygon points="10,-68 68,45 10,48" fill="#475569"/> <!-- Shadow face -->
+      <!-- Snow Cap Center -->
+      <polygon points="10,-68 -10,-35 8,-32 25,-26" fill="#ffffff"/>
+      <!-- Blue Luminous Ore Veins -->
+      <path d="M-22,15 L-12,-2 L-4,12 L8,-8 L16,6" stroke="#38bdf8" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow-gold)"/>
+
+      <rect x="-46" y="65" width="92" height="20" rx="4" fill="rgba(0,0,0,0.65)"/>
+      <text x="0" y="79" font-size="11" font-weight="bold" fill="#93c5fd" text-anchor="middle">MOUNTAINS (Ore)</text>
+    </g>
+
+    <!-- 3D DESERT HEX -->
+    <g id="3D-Hex-Desert" transform="translate(1330, 180)" filter="url(#shadow-3d)">
+      <polygon points="-86.6,50 0,100 0,130 -86.6,80" fill="url(#desert-slab)" opacity="0.95"/>
+      <polygon points="0,100 86.6,50 86.6,80 0,130" fill="url(#desert-slab)" opacity="0.75"/>
+      <polygon points="0,-100 86.6,-50 86.6,50 0,100 -86.6,50 -86.6,-50" fill="url(#desert-top)" stroke="#fae8b2" stroke-width="2.5"/>
+      <polygon points="0,-94 81,-47 81,47 0,94 -81,47 -81,-47" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+
+      <!-- 3D Sweeping Sand Dunes -->
+      <path d="M-80,-25 Q-15,-65 50,-15 Q75,10 85,-10 L85,25 Q10,15 -80,5 Z" fill="#d4bb79"/>
+      <path d="M-80,10 Q-30,48 40,15 Q65,40 85,25 L85,85 L-80,85 Z" fill="#bfa35a"/>
+
+      <!-- 3D Saguaro Cactus -->
+      <g transform="translate(0, -10)" filter="url(#shadow-sm)">
+        <ellipse cx="0" cy="28" rx="14" ry="4" fill="rgba(0,0,0,0.25)"/>
+        <!-- Main Trunk -->
+        <rect x="-5" y="-30" width="10" height="55" rx="5" fill="#4d7c0f" stroke="#1a2e05" stroke-width="2"/>
+        <line x1="0" y1="-26" x2="0" y2="20" stroke="#65a30d" stroke-width="2"/>
+        <!-- Left Arm -->
+        <path d="M-5,-6 L-18,-6 A4,4 0 0,1 -22,-10 L-22,-25" fill="none" stroke="#4d7c0f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M-5,-6 L-18,-6 A4,4 0 0,1 -22,-10 L-22,-25" fill="none" stroke="#1a2e05" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Right Arm -->
+        <path d="M5,4 L18,4 A4,4 0 0,0 22,0 L22,-15" fill="none" stroke="#4d7c0f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5,4 L18,4 A4,4 0 0,0 22,0 L22,-15" fill="none" stroke="#1a2e05" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+
+      <rect x="-40" y="65" width="80" height="20" rx="4" fill="rgba(0,0,0,0.65)"/>
+      <text x="0" y="79" font-size="11" font-weight="bold" fill="#fef08a" text-anchor="middle">DESERT (Robber)</text>
+    </g>
+
+    <!-- 3D NUMBER TOKEN & PIP BADGES -->
+    <g id="3D-Tokens" transform="translate(1520, 110)">
+      <text x="0" y="-10" font-size="15" font-weight="bold" fill="#ffd54f">3D CARVED NUMBER TOKENS</text>
+      <!-- Token 6 (Hot Red) -->
+      <g transform="translate(55, 60)" filter="url(#shadow-3d)">
+        <!-- Outer Wood Rim -->
+        <circle cx="0" cy="5" r="42" fill="#5c3818"/>
+        <circle cx="0" cy="0" r="42" fill="#b07038" stroke="#3e220a" stroke-width="3"/>
+        <!-- Inset Ivory Face -->
+        <circle cx="0" cy="0" r="34" fill="#fff5f5" stroke="#fca5a5" stroke-width="2"/>
+        <text x="0" y="9" font-family="'Bricolage Grotesque', sans-serif" font-size="34" font-weight="bold" fill="#dc2626" text-anchor="middle">6</text>
+        <!-- 5 Red Pips -->
+        <circle cx="-16" cy="21" r="3" fill="#dc2626"/><circle cx="-8" cy="21" r="3" fill="#dc2626"/><circle cx="0" cy="21" r="3" fill="#dc2626"/><circle cx="8" cy="21" r="3" fill="#dc2626"/><circle cx="16" cy="21" r="3" fill="#dc2626"/>
+      </g>
+
+      <!-- Token 8 (Hot Red) -->
+      <g transform="translate(165, 60)" filter="url(#shadow-3d)">
+        <circle cx="0" cy="5" r="42" fill="#5c3818"/>
+        <circle cx="0" cy="0" r="42" fill="#b07038" stroke="#3e220a" stroke-width="3"/>
+        <circle cx="0" cy="0" r="34" fill="#fff5f5" stroke="#fca5a5" stroke-width="2"/>
+        <text x="0" y="9" font-family="'Bricolage Grotesque', sans-serif" font-size="34" font-weight="bold" fill="#dc2626" text-anchor="middle">8</text>
+        <circle cx="-16" cy="21" r="3" fill="#dc2626"/><circle cx="-8" cy="21" r="3" fill="#dc2626"/><circle cx="0" cy="21" r="3" fill="#dc2626"/><circle cx="8" cy="21" r="3" fill="#dc2626"/><circle cx="16" cy="21" r="3" fill="#dc2626"/>
+      </g>
+
+      <!-- Token 10 (Regular) -->
+      <g transform="translate(275, 60)" filter="url(#shadow-3d)">
+        <circle cx="0" cy="5" r="42" fill="#5c3818"/>
+        <circle cx="0" cy="0" r="42" fill="#b07038" stroke="#3e220a" stroke-width="3"/>
+        <circle cx="0" cy="0" r="34" fill="#fcf8ed" stroke="#d5c39e" stroke-width="2"/>
+        <text x="0" y="8" font-family="'Bricolage Grotesque', sans-serif" font-size="28" font-weight="bold" fill="#1f2937" text-anchor="middle">10</text>
+        <circle cx="-10" cy="21" r="2.8" fill="#1f2937"/><circle cx="0" cy="21" r="2.8" fill="#1f2937"/><circle cx="10" cy="21" r="2.8" fill="#1f2937"/>
+      </g>
+    </g>
+
+    <!-- 3D HARBOR BUOY -->
+    <g id="3D-Harbor-Buoy" transform="translate(1950, 110)">
+      <text x="0" y="-10" font-size="15" font-weight="bold" fill="#ffd54f">3D MARITIME HARBOR BUOY</text>
+      <g transform="translate(60, 60)" filter="url(#shadow-3d)">
+        <!-- Wood Dock Pier Planks -->
+        <rect x="-35" y="15" width="70" height="25" rx="3" fill="#8b5a2b" stroke="#4a2808" stroke-width="2"/>
+        <line x1="-15" y1="15" x2="-15" y2="40" stroke="#4a2808" stroke-width="1.5"/>
+        <line x1="10" y1="15" x2="10" y2="40" stroke="#4a2808" stroke-width="1.5"/>
+        <!-- Buoy Float -->
+        <circle cx="0" cy="-6" r="32" fill="#0f3d69" stroke="#38bdf8" stroke-width="3"/>
+        <text x="0" y="-8" font-family="'Bricolage Grotesque', sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">3:1</text>
+        <text x="0" y="12" font-size="14" fill="#ffd54f" text-anchor="middle">⚓</text>
+      </g>
+      <g transform="translate(170, 60)" filter="url(#shadow-3d)">
+        <rect x="-35" y="15" width="70" height="25" rx="3" fill="#8b5a2b" stroke="#4a2808" stroke-width="2"/>
+        <circle cx="0" cy="-6" r="32" fill="#ba5d2c" stroke="#fed7aa" stroke-width="3"/>
+        <text x="0" y="-8" font-family="'Bricolage Grotesque', sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">2:1</text>
+        <text x="0" y="12" font-size="14" fill="#fff" text-anchor="middle">🧱</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- 2. HAND-CARVED 3D WOODEN PIECES & FIGURINES -->
+  <!-- ========================================================================= -->
+  <g id="2-Wooden-Playing-Pieces" transform="translate(80, 560)">
+    <text font-family="'Bricolage Grotesque', sans-serif" font-size="22" font-weight="bold" fill="#ffd54f">2. 3D WOODEN PLAYING PIECES (BEVELED TIMBER TOKENS)</text>
+    <text font-size="14" fill="#8cb3d9" y="24">Crafted with top specular bevels, side grain shadows, and ground drop shadows in 6 player colors.</text>
+
+    <!-- 3D ROADS (TIMBER LOGS) -->
+    <g transform="translate(20, 60)">
+      <text x="0" y="-10" font-size="15" font-weight="bold" fill="#ffffff">3D ROADS (Beveled Timber)</text>
+      
+      <!-- Red Road -->
+      <g transform="translate(0, 10)" filter="url(#shadow-md)">
+        <polygon points="0,8 10,-4 100,-4 90,8" fill="#ff7676"/> <!-- Top Bevel -->
+        <polygon points="0,8 90,8 90,26 0,26" fill="url(#wood-red)"/> <!-- Front Face -->
+        <polygon points="90,8 100,-4 100,14 90,26" fill="#800000"/> <!-- Side Face -->
+        <!-- Wood grain subtle line -->
+        <line x1="12" y1="17" x2="78" y2="17" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+
+      <!-- Blue Road -->
+      <g transform="translate(125, 10)" filter="url(#shadow-md)">
+        <polygon points="0,8 10,-4 100,-4 90,8" fill="#70d6ff"/>
+        <polygon points="0,8 90,8 90,26 0,26" fill="url(#wood-blue)"/>
+        <polygon points="90,8 100,-4 100,14 90,26" fill="#003366"/>
+        <line x1="12" y1="17" x2="78" y2="17" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+
+      <!-- Orange Road -->
+      <g transform="translate(250, 10)" filter="url(#shadow-md)">
+        <polygon points="0,8 10,-4 100,-4 90,8" fill="#ffcc80"/>
+        <polygon points="0,8 90,8 90,26 0,26" fill="url(#wood-orange)"/>
+        <polygon points="90,8 100,-4 100,14 90,26" fill="#803300"/>
+        <line x1="12" y1="17" x2="78" y2="17" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+
+      <!-- White Road -->
+      <g transform="translate(375, 10)" filter="url(#shadow-md)">
+        <polygon points="0,8 10,-4 100,-4 90,8" fill="#ffffff"/>
+        <polygon points="0,8 90,8 90,26 0,26" fill="url(#wood-white)"/>
+        <polygon points="90,8 100,-4 100,14 90,26" fill="#757575"/>
+        <line x1="12" y1="17" x2="78" y2="17" stroke="rgba(0,0,0,0.15)" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- 3D SETTLEMENTS (COTTAGES) -->
+    <g transform="translate(540, 60)">
+      <text x="0" y="-10" font-size="15" font-weight="bold" fill="#ffffff">3D SETTLEMENTS (Gabled Cottages)</text>
+      
+      <!-- Red Settlement -->
+      <g transform="translate(10, 5)" filter="url(#shadow-3d)">
+        <!-- 3D Shadow -->
+        <polygon points="20,62 65,62 80,48 35,48" fill="rgba(0,0,0,0.45)"/>
+        <!-- Side Wall (Shadowed) -->
+        <polygon points="40,24 60,10 60,42 40,56" fill="#800000"/>
+        <!-- Roof Side Slope -->
+        <polygon points="20,0 40,-14 60,10 40,24" fill="#a80000"/>
+        <!-- Front Wall -->
+        <polygon points="0,24 40,24 40,56 0,56" fill="url(#wood-red)"/>
+        <!-- Front Gable Roof -->
+        <polygon points="0,24 20,0 40,24" fill="#ff7676"/>
+        <!-- Chimney -->
+        <polygon points="28,-4 34,-8 34,4 28,8" fill="#500000"/>
+        <!-- Door Notch -->
+        <rect x="14" y="38" width="12" height="18" rx="2" fill="#500000"/>
+      </g>
+
+      <!-- Blue Settlement -->
+      <g transform="translate(110, 5)" filter="url(#shadow-3d)">
+        <polygon points="20,62 65,62 80,48 35,48" fill="rgba(0,0,0,0.45)"/>
+        <polygon points="40,24 60,10 60,42 40,56" fill="#003366"/>
+        <polygon points="20,0 40,-14 60,10 40,24" fill="#004d99"/>
+        <polygon points="0,24 40,24 40,56 0,56" fill="url(#wood-blue)"/>
+        <polygon points="0,24 20,0 40,24" fill="#70d6ff"/>
+        <polygon points="28,-4 34,-8 34,4 28,8" fill="#002244"/>
+        <rect x="14" y="38" width="12" height="18" rx="2" fill="#002244"/>
+      </g>
+
+      <!-- Green Settlement -->
+      <g transform="translate(210, 5)" filter="url(#shadow-3d)">
+        <polygon points="20,62 65,62 80,48 35,48" fill="rgba(0,0,0,0.45)"/>
+        <polygon points="40,24 60,10 60,42 40,56" fill="#004d1a"/>
+        <polygon points="20,0 40,-14 60,10 40,24" fill="#007e2a"/>
+        <polygon points="0,24 40,24 40,56 0,56" fill="url(#wood-green)"/>
+        <polygon points="0,24 20,0 40,24" fill="#86efac"/>
+        <rect x="14" y="38" width="12" height="18" rx="2" fill="#003311"/>
+      </g>
+    </g>
+
+    <!-- 3D CITIES (FORTIFIED KEEPS) -->
+    <g transform="translate(890, 60)">
+      <text x="0" y="-10" font-size="15" font-weight="bold" fill="#ffffff">3D CITIES (Fortified Keeps &amp; Towers)</text>
+
+      <!-- Red City -->
+      <g transform="translate(10, 5)" filter="url(#shadow-3d)">
+        <!-- Ground Shadow -->
+        <polygon points="30,62 95,62 105,45 40,45" fill="rgba(0,0,0,0.45)"/>
+        <!-- Tower Right Side -->
+        <polygon points="24,10 40,-2 40,48 24,60" fill="#660000"/>
+        <polygon points="70,24 85,12 85,48 70,60" fill="#800000"/>
+        <!-- Tower Roof Top Bevel -->
+        <polygon points="0,0 16,-12 40,-2 24,10" fill="#ff7676"/>
+        <!-- Keep Roof Top Bevel -->
+        <polygon points="24,20 40,8 85,12 70,24" fill="#ff6666"/>
+        <!-- Front Tower & Hall -->
+        <polygon points="0,10 24,10 24,60 0,60" fill="url(#wood-red)"/>
+        <polygon points="24,24 70,24 70,60 24,60" fill="url(#wood-red)"/>
+        <!-- Battlements Cutouts -->
+        <rect x="4" y="4" width="5" height="6" fill="#500000"/>
+        <rect x="14" y="4" width="5" height="6" fill="#500000"/>
+        <rect x="30" y="18" width="6" height="6" fill="#500000"/>
+        <rect x="44" y="18" width="6" height="6" fill="#500000"/>
+        <rect x="58" y="18" width="6" height="6" fill="#500000"/>
+        <!-- Arched Gate -->
+        <path d="M40,60 L40,44 A8,8 0 0,1 56,44 L56,60 Z" fill="#500000"/>
+      </g>
+
+      <!-- Blue City -->
+      <g transform="translate(130, 5)" filter="url(#shadow-3d)">
+        <polygon points="30,62 95,62 105,45 40,45" fill="rgba(0,0,0,0.45)"/>
+        <polygon points="24,10 40,-2 40,48 24,60" fill="#002b55"/>
+        <polygon points="70,24 85,12 85,48 70,60" fill="#003d80"/>
+        <polygon points="0,0 16,-12 40,-2 24,10" fill="#70d6ff"/>
+        <polygon points="24,20 40,8 85,12 70,24" fill="#38bdf8"/>
+        <polygon points="0,10 24,10 24,60 0,60" fill="url(#wood-blue)"/>
+        <polygon points="24,24 70,24 70,60 24,60" fill="url(#wood-blue)"/>
+        <path d="M40,60 L40,44 A8,8 0 0,1 56,44 L56,60 Z" fill="#002244"/>
+      </g>
+    </g>
+
+    <!-- 3D ROBBER FIGURINE -->
+    <g transform="translate(1220, 60)">
+      <text x="0" y="-10" font-size="15" font-weight="bold" fill="#ffffff">3D ROBBER (Faceted Charcoal Pawn)</text>
+      
+      <g transform="translate(20, 5)" filter="url(#shadow-3d)">
+        <!-- Elliptical Contact Shadow -->
+        <ellipse cx="25" cy="65" rx="22" ry="7" fill="rgba(0,0,0,0.6)"/>
+        <!-- Faceted Body -->
+        <polygon points="25,22 10,26 4,62 25,66" fill="#141414"/>
+        <polygon points="25,22 40,26 46,62 25,66" fill="#0a0a0a"/> <!-- Shadow side -->
+        <!-- Light Bevel Front -->
+        <line x1="25" y1="22" x2="25" y2="66" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+        <!-- Spherical Head with Specular Point -->
+        <circle cx="25" cy="14" r="14" fill="#242424" stroke="#000" stroke-width="2"/>
+        <ellipse cx="20" cy="9" rx="5" ry="3" fill="rgba(255,255,255,0.35)" transform="rotate(-30, 20, 9)"/>
+      </g>
+    </g>
+
+    <!-- 3D TUMBLING DICE -->
+    <g transform="translate(1450, 60)">
+      <text x="0" y="-10" font-size="15" font-weight="bold" fill="#ffd54f">3D ISOMETRIC TUMBLING DICE</text>
+      
+      <!-- Die A (Isometric Cube showing 1, 2, 3) -->
+      <g transform="translate(30, 5)" filter="url(#shadow-3d)">
+        <!-- Top Face (Shows 1) -->
+        <polygon points="35,0 70,18 35,36 0,18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+        <circle cx="35" cy="18" r="4.5" fill="#1e293b"/>
+        <!-- Left Face (Shows 2) -->
+        <polygon points="0,18 35,36 35,76 0,58" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2"/>
+        <circle cx="12" cy="33" r="3.8" fill="#1e293b"/>
+        <circle cx="23" cy="61" r="3.8" fill="#1e293b"/>
+        <!-- Right Face (Shows 3) -->
+        <polygon points="35,36 70,18 70,58 35,76" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2"/>
+        <circle cx="46" cy="61" r="3.8" fill="#1e293b"/>
+        <circle cx="52.5" cy="47" r="3.8" fill="#1e293b"/>
+        <circle cx="59" cy="33" r="3.8" fill="#1e293b"/>
+      </g>
+
+      <!-- Die B (Tilted Red Accented Die showing 6, 5, 4) -->
+      <g transform="translate(130, 5)" filter="url(#shadow-3d)">
+        <polygon points="35,0 70,18 35,36 0,18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+        <!-- 6 Pips on Top -->
+        <circle cx="20" cy="11" r="3" fill="#dc2626"/><circle cx="35" cy="9" r="3" fill="#dc2626"/><circle cx="50" cy="11" r="3" fill="#dc2626"/>
+        <circle cx="20" cy="25" r="3" fill="#dc2626"/><circle cx="35" cy="27" r="3" fill="#dc2626"/><circle cx="50" cy="25" r="3" fill="#dc2626"/>
+        <!-- Left Face -->
+        <polygon points="0,18 35,36 35,76 0,58" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2"/>
+        <!-- Right Face -->
+        <polygon points="35,36 70,18 70,58 35,76" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- 3. CARDS & HUD DOCK SYSTEM -->
+  <!-- ========================================================================= -->
+  <g id="3-Cards-And-HUD" transform="translate(80, 880)">
+    <text font-family="'Bricolage Grotesque', sans-serif" font-size="22" font-weight="bold" fill="#ffd54f">3. ILLUSTRATED CARD TRAYS &amp; TACTILE HUD COCKPIT</text>
+    <text font-size="14" fill="#8cb3d9" y="24">Parchment deck cards, floating player hand drawer, and glassmorphic cockpit dock.</text>
+
+    <!-- 5 Resource Cards -->
+    <g transform="translate(20, 60)">
+      <!-- Wood -->
+      <g transform="translate(0, 0)" filter="url(#shadow-md)">
+        <rect x="0" y="0" width="115" height="165" rx="8" fill="url(#card-base)" stroke="url(#card-gold-border)" stroke-width="2"/>
+        <rect x="6" y="6" width="103" height="30" rx="4" fill="#1b4d24"/>
+        <text x="57" y="26" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">LUMBER</text>
+        <circle cx="57" cy="85" r="30" fill="#f0f7f1" stroke="#1b4d24" stroke-width="1.5"/>
+        <path d="M44,98 L70,98 L65,75 L49,75 Z" fill="#8B5A2B"/>
+        <circle cx="57" cy="70" r="18" fill="#2d6e38"/>
+        <text x="57" y="146" font-size="13" font-weight="bold" fill="#1b4d24" text-anchor="middle">WOOD (1)</text>
+      </g>
+
+      <!-- Brick -->
+      <g transform="translate(135, 0)" filter="url(#shadow-md)">
+        <rect x="0" y="0" width="115" height="165" rx="8" fill="url(#card-base)" stroke="url(#card-gold-border)" stroke-width="2"/>
+        <rect x="6" y="6" width="103" height="30" rx="4" fill="#8f3e15"/>
+        <text x="57" y="26" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">BRICK</text>
+        <circle cx="57" cy="85" r="30" fill="#faeee6" stroke="#8f3e15" stroke-width="1.5"/>
+        <rect x="42" y="76" width="14" height="8" rx="1" fill="#c25721"/>
+        <rect x="58" y="76" width="14" height="8" rx="1" fill="#c25721"/>
+        <rect x="50" y="66" width="14" height="8" rx="1" fill="#e0692d"/>
+        <rect x="42" y="86" width="30" height="8" rx="1" fill="#8a340b"/>
+        <text x="57" y="146" font-size="13" font-weight="bold" fill="#8f3e15" text-anchor="middle">CLAY (1)</text>
+      </g>
+
+      <!-- Sheep -->
+      <g transform="translate(270, 0)" filter="url(#shadow-md)">
+        <rect x="0" y="0" width="115" height="165" rx="8" fill="url(#card-base)" stroke="url(#card-gold-border)" stroke-width="2"/>
+        <rect x="6" y="6" width="103" height="30" rx="4" fill="#5c9420"/>
+        <text x="57" y="26" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">WOOL</text>
+        <circle cx="57" cy="85" r="30" fill="#f4f9ed" stroke="#5c9420" stroke-width="1.5"/>
+        <ellipse cx="57" cy="85" rx="16" ry="12" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
+        <circle cx="45" cy="80" r="5.5" fill="#1e293b"/>
+        <text x="57" y="146" font-size="13" font-weight="bold" fill="#5c9420" text-anchor="middle">SHEEP (1)</text>
+      </g>
+
+      <!-- Wheat -->
+      <g transform="translate(405, 0)" filter="url(#shadow-md)">
+        <rect x="0" y="0" width="115" height="165" rx="8" fill="url(#card-base)" stroke="url(#card-gold-border)" stroke-width="2"/>
+        <rect x="6" y="6" width="103" height="30" rx="4" fill="#b08307"/>
+        <text x="57" y="26" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">GRAIN</text>
+        <circle cx="57" cy="85" r="30" fill="#fefbee" stroke="#b08307" stroke-width="1.5"/>
+        <path d="M47,100 C47,68 67,68 67,100 Z" fill="#fed648" stroke="#b08307" stroke-width="1.5"/>
+        <text x="57" y="146" font-size="13" font-weight="bold" fill="#b08307" text-anchor="middle">WHEAT (1)</text>
+      </g>
+
+      <!-- Ore -->
+      <g transform="translate(540, 0)" filter="url(#shadow-md)">
+        <rect x="0" y="0" width="115" height="165" rx="8" fill="url(#card-base)" stroke="url(#card-gold-border)" stroke-width="2"/>
+        <rect x="6" y="6" width="103" height="30" rx="4" fill="#5a6773"/>
+        <text x="57" y="26" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">ORE</text>
+        <circle cx="57" cy="85" r="30" fill="#f1f5f9" stroke="#5a6773" stroke-width="1.5"/>
+        <polygon points="45,98 38,80 57,70 74,78 76,98" fill="#9daab6" stroke="#1e293b" stroke-width="1.5"/>
+        <text x="57" y="146" font-size="13" font-weight="bold" fill="#5a6773" text-anchor="middle">ORE (1)</text>
+      </g>
+    </g>
+
+    <!-- Dev Cards & Special Cards -->
+    <g transform="translate(740, 60)">
+      <!-- Knight -->
+      <g transform="translate(0, 0)" filter="url(#shadow-md)">
+        <rect x="0" y="0" width="115" height="165" rx="8" fill="#132b45" stroke="#38bdf8" stroke-width="2"/>
+        <rect x="6" y="6" width="103" height="28" rx="4" fill="#091b2e"/>
+        <text x="57" y="25" font-size="11" font-weight="bold" fill="#38bdf8" text-anchor="middle">⚔ KNIGHT</text>
+        <circle cx="57" cy="80" r="28" fill="#040e1a" stroke="#38bdf8" stroke-width="1"/>
+        <polygon points="48,70 66,70 57,98" fill="#cbd5e1"/>
+        <text x="57" y="132" font-size="10" fill="#94a3b8" text-anchor="middle">Move Robber</text>
+        <text x="57" y="146" font-size="10" fill="#94a3b8" text-anchor="middle">&amp; Steal 1 Card</text>
+      </g>
+
+      <!-- Victory Point Card (Gold) -->
+      <g transform="translate(135, 0)" filter="url(#glow-gold)">
+        <rect x="0" y="0" width="115" height="165" rx="8" fill="#1c3328" stroke="#fbbf24" stroke-width="2.5"/>
+        <rect x="6" y="6" width="103" height="28" rx="4" fill="#0b1b13"/>
+        <text x="57" y="25" font-size="11" font-weight="bold" fill="#fbbf24" text-anchor="middle">🏆 VICTORY POINT</text>
+        <circle cx="57" cy="80" r="28" fill="#040e1a" stroke="#fbbf24" stroke-width="1.5"/>
+        <!-- Cup -->
+        <path d="M46,68 L68,68 L64,86 Q57,92 50,86 Z" fill="#fbbf24"/>
+        <rect x="54" y="90" width="6" height="8" fill="#d97706"/>
+        <rect x="47" y="98" width="20" height="4" rx="1" fill="#b45309"/>
+        <text x="57" y="134" font-family="'Bricolage Grotesque', sans-serif" font-size="16" font-weight="bold" fill="#fbbf24" text-anchor="middle">+1 POINT</text>
+        <text x="57" y="148" font-size="10" fill="#a7f3d0" text-anchor="middle">Hidden until win</text>
+      </g>
+    </g>
+
+    <!-- Tactile Build Dock -->
+    <g transform="translate(1080, 60)" filter="url(#shadow-3d)">
+      <rect x="0" y="0" width="560" height="90" rx="14" fill="#0a4986" stroke="#1d64a6" stroke-width="2"/>
+      <!-- Road -->
+      <g transform="translate(12, 12)">
+        <rect x="0" y="0" width="124" height="66" rx="8" fill="#08294a" stroke="#2563eb" stroke-width="1.5"/>
+        <text x="62" y="28" font-size="15" font-weight="bold" fill="#fff" text-anchor="middle">🛣 Road</text>
+        <text x="62" y="50" font-size="13" fill="#ffd54f" text-anchor="middle">🪵1 🧱1</text>
+      </g>
+      <!-- Settlement (Active Armed) -->
+      <g transform="translate(148, 12)" filter="url(#glow-gold)">
+        <rect x="0" y="0" width="132" height="66" rx="8" fill="#f06800" stroke="#ffaa44" stroke-width="2"/>
+        <text x="66" y="28" font-size="15" font-weight="bold" fill="#fff" text-anchor="middle">🏠 Settlement</text>
+        <text x="66" y="50" font-size="12" fill="#ffe0b2" text-anchor="middle">🪵1 🧱1 🐑1 🌾1</text>
+      </g>
+      <!-- City -->
+      <g transform="translate(292, 12)">
+        <rect x="0" y="0" width="124" height="66" rx="8" fill="#08294a" stroke="#2563eb" stroke-width="1.5"/>
+        <text x="62" y="28" font-size="15" font-weight="bold" fill="#fff" text-anchor="middle">🏛 City</text>
+        <text x="62" y="50" font-size="13" fill="#ffd54f" text-anchor="middle">🌾2 ⛰3</text>
+      </g>
+      <!-- Dev -->
+      <g transform="translate(428, 12)">
+        <rect x="0" y="0" width="120" height="66" rx="8" fill="#08294a" stroke="#2563eb" stroke-width="1.5"/>
+        <text x="60" y="28" font-size="15" font-weight="bold" fill="#fff" text-anchor="middle">🃏 Dev Card</text>
+        <text x="60" y="50" font-size="13" fill="#ffd54f" text-anchor="middle">🐑1 🌾1 ⛰1</text>
+      </g>
+    </g>
+
+    <!-- Interactive Canvas Zoom / Pan Widget Controls -->
+    <g transform="translate(1700, 60)" filter="url(#shadow-md)">
+      <text x="0" y="-12" font-size="14" font-weight="bold" fill="#ffd54f">FLOATING CANVAS ZOOM WIDGET</text>
+      <rect x="0" y="0" width="220" height="60" rx="10" fill="#051a30" stroke="#1e90ff" stroke-width="2"/>
+      <g transform="translate(15, 12)">
+        <rect x="0" y="0" width="36" height="36" rx="6" fill="#0f3d69"/>
+        <text x="18" y="24" font-size="20" font-weight="bold" fill="#fff" text-anchor="middle">+</text>
+      </g>
+      <text x="95" y="36" font-size="14" font-weight="bold" fill="#7fa6c9" text-anchor="middle">100%</text>
+      <g transform="translate(125, 12)">
+        <rect x="0" y="0" width="36" height="36" rx="6" fill="#0f3d69"/>
+        <text x="18" y="23" font-size="20" font-weight="bold" fill="#fff" text-anchor="middle">−</text>
+      </g>
+      <g transform="translate(170, 12)">
+        <rect x="0" y="0" width="36" height="36" rx="6" fill="#0f3d69"/>
+        <text x="18" y="23" font-size="16" fill="#ffd54f" text-anchor="middle">⛶</text>
+      </g>
+    </g>
+  </g>
+</svg>
